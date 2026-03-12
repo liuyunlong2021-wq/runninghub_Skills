@@ -1,69 +1,84 @@
 # RHClaw — RunningHub Skill for OpenClaw
 
-Universal media generation skill for [OpenClaw](https://github.com/openclaw/openclaw), powered by [RunningHub](https://www.runninghub.cn) API.
+[English](./README_en.md)
 
-**170+ endpoints** covering image, video, audio, 3D model generation, and multimodal text understanding.
+为 [OpenClaw](https://github.com/openclaw/openclaw) 打造的通用多媒体生成技能，由 [RunningHub](https://www.runninghub.cn) API 驱动。
 
-## Capabilities
+**170+ 个 API 端点**，覆盖图片、视频、音频、3D 模型生成和多模态文本理解。
 
-| Category | Endpoints | Tasks |
-|----------|-----------|-------|
-| **Image** | 42 | text-to-image, image-to-image, image upscale, Midjourney-style |
-| **Video** | 94 | text-to-video, image-to-video, start-end frames, video extend/edit, motion control |
-| **Audio** | 8 | text-to-speech, music generation, voice clone |
-| **3D** | 12 | text-to-3D, image-to-3D, multi-image-to-3D |
-| **Text** | 14 | image-to-text, video-to-text, text-to-text |
+## 能力一览
 
-## Quick start
+| 类别 | 端点数 | 支持任务 |
+|------|--------|----------|
+| **图片** | 42 | 文生图、图生图、图片放大、Midjourney 风格 |
+| **视频** | 94 | 文生视频、图生视频、首尾帧生成、视频续写/编辑、运动控制 |
+| **音频** | 8 | 文字转语音、音乐生成、声音克隆 |
+| **3D** | 12 | 文字转 3D、图片转 3D、多图转 3D |
+| **文本** | 14 | 图片理解、视频理解、文本处理 |
 
-In your OpenClaw chat, say:
+## 快速开始
 
-> Install the RunningHub skill from https://github.com/HM-RunningHub/OpenClaw_RH_Skills
+在 OpenClaw 对话中发送：
 
-The assistant will clone the repo, copy files to the workspace, and guide you through API key setup.
+> 从 https://github.com/HM-RunningHub/OpenClaw_RH_Skills 安装 RunningHub 技能
 
-### Prerequisites
+助手会自动克隆仓库、复制文件到工作区，并引导你完成 API Key 配置。
 
-- **API Key** — Get one from [RunningHub API Management](https://www.runninghub.cn/enterprise-api/sharedApi) (click "新建")
-- **Wallet balance** — [Recharge here](https://www.runninghub.cn/vip-rights/4) — API calls require funds
+### 前置条件
 
-## Usage
+- **API Key** — 在 [RunningHub API 管理页面](https://www.runninghub.cn/enterprise-api/sharedApi) 创建（点击"新建"）
+- **账户余额** — [前往充值](https://www.runninghub.cn/vip-rights/4)，API 调用需要余额
 
-Once installed, just talk to your OpenClaw assistant:
+## 使用方式
 
-- *"Generate a picture of a dog playing in the park"*
-- *"Turn this photo into a video"*
-- *"Create background music for my video"*
-- *"Upscale this image to 4K"*
-- *"Convert this image to a 3D model"*
+安装完成后，直接用自然语言跟助手对话即可：
 
-The assistant automatically selects the best RunningHub endpoint based on your request.
+- *"帮我画一只在公园里玩耍的小狗"*
+- *"把这张照片做成视频"*
+- *"给我的视频配个背景音乐"*
+- *"把这张图放大到 4K"*
+- *"把这张图转成 3D 模型"*
 
-## Architecture
+助手会自动选择最合适的 RunningHub 端点来完成你的请求。
+
+### 视频生成交互
+
+生成视频时，助手会展示 6 个精选模型让你选择：
+
+> 1. 🚀 **万相2.6** — 又快又便宜，性价比之王
+> 2. 🎯 **可灵 v3.0 Pro** — 运动自然，拍人物首选
+> 3. 🎬 **全能视频V3.1 Pro** — 电影感拉满
+> 4. ✨ **Vidu Q3 Pro** — 风格化独特
+> 5. ⭐ **全能视频S** — Sora 同款引擎
+> 6. 🌊 **海螺 Hailuo** — 速度快画面细腻
+
+选个数字就能开始生成，不选默认用万相2.6。
+
+## 项目结构
 
 ```
 runninghub/
-├── SKILL.md                        # OpenClaw skill definition (routing table + examples)
+├── SKILL.md                        # OpenClaw 技能定义（路由表 + 示例 + 交互规则）
 ├── scripts/
-│   ├── runninghub.py               # Universal API client (170+ endpoints)
-│   └── build_capabilities.py       # Generates capabilities.json from models_registry.json
+│   ├── runninghub.py               # 通用 API 客户端（170+ 端点）
+│   └── build_capabilities.py       # 从 models_registry.json 生成 capabilities.json
 └── data/
-    └── capabilities.json           # Full endpoint catalog (auto-generated)
+    └── capabilities.json           # 完整端点目录（自动生成）
 ```
 
-## Script modes
+## 脚本模式
 
-| Mode | Command | Purpose |
-|------|---------|---------|
-| **Check** | `--check` | Verify API key + check wallet balance |
-| **List** | `--list [--type T] [--task T]` | Browse available endpoints |
-| **Info** | `--info ENDPOINT` | View endpoint parameters |
-| **Execute** | `--endpoint EP --prompt "..." -o /tmp/out` | Run with specific endpoint |
-| **Auto** | `--task TASK --prompt "..." -o /tmp/out` | Auto-select best endpoint |
+| 模式 | 命令 | 用途 |
+|------|------|------|
+| **检查** | `--check` | 验证 API Key + 查询余额 |
+| **列表** | `--list [--type T] [--task T]` | 浏览可用端点 |
+| **详情** | `--info ENDPOINT` | 查看端点参数 |
+| **执行** | `--endpoint EP --prompt "..." -o /tmp/out` | 使用指定端点执行 |
+| **自动** | `--task TASK --prompt "..." -o /tmp/out` | 自动选择最佳端点 |
 
-## Updating capabilities
+## 更新能力目录
 
-When RunningHub adds new API endpoints, regenerate the catalog:
+当 RunningHub 上线新的 API 端点时，重新生成目录：
 
 ```bash
 python3 scripts/build_capabilities.py \
@@ -71,4 +86,6 @@ python3 scripts/build_capabilities.py \
   --output data/capabilities.json
 ```
 
-Then copy the updated `capabilities.json` to the OpenClaw workspace.
+## 许可证
+
+[Apache-2.0](./LICENSE)
