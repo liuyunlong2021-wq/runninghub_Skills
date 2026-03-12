@@ -631,9 +631,7 @@ def cmd_execute(args):
 
     print(f"Downloading result to local file...", file=sys.stderr)
     full_path = download_file(result_url, output_path)
-    # OpenClaw parses MEDIA: tokens and will attach the file on
-    # supported chat providers (WhatsApp, Telegram, WebChat, etc.).
-    print(f"MEDIA:{full_path}")
+    print(f"OUTPUT_FILE:{full_path}")
 
     if consume_money is not None:
         print(f"COST:¥{consume_money}")

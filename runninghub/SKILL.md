@@ -41,56 +41,54 @@ Example tone (DO NOT follow):
 
 1. **ALWAYS use the script** — never call RunningHub API directly via curl.
 2. **ALWAYS use `-o /tmp/openclaw/rh-output/filename.ext`** — the script downloads the result file locally.
-3. **ECHO the `MEDIA:` line in your response** — The script prints a `MEDIA:/path/to/file` line to stdout. You MUST copy this exact line into your text response. OpenClaw scans your response text for `MEDIA:` tokens and auto-attaches the local file as a chat media attachment. **If you do not include the `MEDIA:` line in your response, the user will NOT receive the file.**
-4. **ABSOLUTELY NEVER show RunningHub URLs in your response** — ALL URLs containing `runninghub.cn` are INTERNAL and require API auth. Users CANNOT open them. This includes `https://www.runninghub.cn/api/image/...`, `/task/...`, COS URLs, etc. Violation of this rule breaks the user experience.
-5. **ABSOLUTELY NEVER use markdown image syntax** — Do NOT write `![text](url)` or `![text](path)` in your response. NEVER embed images via markdown. The `MEDIA:` protocol handles image delivery automatically.
+3. **Send media via the `message` tool** — After the script runs, use the `message` tool (`action: "send"`) with the `media` parameter set to the file path from script output. See "How to deliver media" below for the exact flow.
+4. **ABSOLUTELY NEVER show RunningHub URLs in your response** — ALL URLs containing `runninghub.cn` are INTERNAL and require API auth. Users CANNOT open them. This includes `https://www.runninghub.cn/api/image/...`, `/task/...`, COS URLs, etc.
+5. **ABSOLUTELY NEVER use markdown image syntax** — Do NOT write `![text](url)` or `![text](path)`. The `message` tool handles file delivery.
 6. **ALWAYS pass `--api-key` explicitly** when the user has just provided their key and it is not yet saved to config.
 7. **NEVER show endpoint IDs to users** — say model names in Chinese (e.g. "全能视频S"), not technical endpoint strings.
-8. **ALWAYS report cost** — if the script output contains a `COST:` line, you MUST include the cost in your response (e.g. "花了 ¥0.50"). Do not omit it.
+8. **ALWAYS report cost** — if the script output contains a `COST:` line, you MUST include the cost in your `message` text (e.g. "花了 ¥0.50"). Do not omit it.
 9. **Image-to-video: ALWAYS present model choices FIRST** — When the user wants to turn an image into a video, you MUST show the 6-model selection menu (see "Interactive Model Selection" section) and WAIT for the user to choose BEFORE running any script. Do NOT auto-select a model. Do NOT skip this step. The only exceptions are listed in "When NOT to ask".
 
-### How to deliver media (IMPORTANT)
+### How to deliver media (IMPORTANT — read carefully)
 
-After the script finishes, it prints a line like:
+The script prints an `OUTPUT_FILE:` line to stdout after downloading the result:
 ```
-MEDIA:/tmp/openclaw/rh-output/puppy.jpg
-```
-
-You MUST include this line verbatim in your response text. Example response:
-
-```
-搞定啦！橘猫荡秋千的图来了～ 花了 ¥0.12
-
-MEDIA:/tmp/openclaw/rh-output/2026-03-13-cat-swing.jpg
-
-小猫在花园里荡秋千的样子超可爱的！要不要我帮它做成动态视频？🐱
+OUTPUT_FILE:/tmp/openclaw/rh-output/puppy.jpg
 ```
 
-OpenClaw will: (1) strip the `MEDIA:` line from the visible text, (2) load the local file, (3) send it as a native media attachment. The user sees ONLY your text + the image/video/audio file.
+You **MUST** then use the **`message` tool** to send the file to the user:
+```json
+{
+  "action": "send",
+  "text": "搞定啦！橘猫荡秋千的图来了～ 花了 ¥0.12\n要不要我帮你把它做成视频？🐱",
+  "media": "/tmp/openclaw/rh-output/2026-03-13-cat-swing.jpg"
+}
+```
+
+After calling the `message` tool, respond with **only** `NO_REPLY` to avoid sending a duplicate text message.
+
+**This is the ONLY reliable way to deliver files.** Do NOT rely on MEDIA: in text, do NOT use markdown images, do NOT just describe the file without sending it.
+
+### Complete flow (step by step)
+
+1. Run the script → it prints `OUTPUT_FILE:/path/to/file` and optionally `COST:¥X.XX`
+2. Call the `message` tool with `action: "send"`, `text` (your warm response including cost), and `media` (the exact path from `OUTPUT_FILE:`)
+3. Respond with `NO_REPLY`
 
 ### Common Mistakes — NEVER do these
 
-❌ **WRONG** (no MEDIA line, shows broken RunningHub URL):
-> 为你生成了一张橘猫荡秋千的图片。
-> ![橘猫荡秋千](https://www.runninghub.cn/api/image/2032169891297370114/output.png)
-> 看看这张"猫咪秋千照"，是不是很治愈？
+❌ **WRONG** — showing RunningHub URLs:
+> ![橘猫](https://www.runninghub.cn/api/image/2032169891297370114/output.png)
 
-❌ Why it's wrong: No `MEDIA:` line → user gets no file. RunningHub URL can't be opened. Markdown image won't render.
+❌ **WRONG** — claiming you sent a file without using the `message` tool:
+> 图片已经作为附件发送给你了～
 
-❌ **WRONG** (claims file was sent but missing MEDIA line):
-> 图片已经作为附件发送给你了～ 花了 ¥0.12
-> 要不要做成视频？
+❌ **WRONG** — putting MEDIA: in your text response (absolute paths are blocked by security):
+> MEDIA:/tmp/openclaw/rh-output/cat.jpg
 
-❌ Why it's wrong: Without the actual `MEDIA:/path` line in your response, OpenClaw has no way to attach the file. The user receives nothing.
-
-✅ **CORRECT** (includes MEDIA line from script output):
-> 搞定啦！橘猫荡秋千的图来了～ 花了 ¥0.12
->
-> MEDIA:/tmp/openclaw/rh-output/2026-03-13-cat-swing.jpg
->
-> 小猫在花园里荡秋千的样子超可爱的！要不要我帮它做成动态视频？🐱
-
-✅ Why it's correct: The `MEDIA:` line triggers OpenClaw to attach the file. No broken URLs. Cost included. Warm tone.
+✅ **CORRECT** — use `message` tool then `NO_REPLY`:
+1. Call `message` with `{ "action": "send", "text": "搞定啦！花了 ¥0.12", "media": "/tmp/openclaw/rh-output/cat.jpg" }`
+2. Text response: `NO_REPLY`
 
 ## API key setup flow
 
@@ -154,7 +152,7 @@ Do NOT attempt any generation until `--check` returns `"ready"` with balance > 0
 - Use timestamps in filenames: `yyyy-mm-dd-hh-mm-ss-name.ext`.
 - Do not pass placeholder values like `your_api_key_here`.
 - If the script returns an error JSON, react based on the `error` field (see Error Handling below).
-- The script prints a `MEDIA:` line — OpenClaw auto-attaches the file. Do not read the image back; report the saved path only.
+- After the script finishes, use the `message` tool to send the file (see "How to deliver media"). Do not read the image back.
 - After delivering a result, suggest a natural next step (upscale, animate, add audio, edit, etc.).
 
 ## Interactive Model Selection
@@ -419,77 +417,50 @@ The script outputs structured JSON errors. React based on the `error` field:
 
 ### Media results (image/video/audio/3D)
 
-The script prints a `MEDIA:` line to stdout after downloading the result:
+The script prints an `OUTPUT_FILE:` line to stdout after downloading the result:
 ```
-MEDIA:/tmp/openclaw/rh-output/puppy.jpg
-```
-
-**YOU MUST echo this `MEDIA:` line in your text response.** OpenClaw scans your outgoing message for `MEDIA:` tokens, strips them from the visible text, loads the local file, and sends it as a native chat attachment. If you omit the `MEDIA:` line from your response, the user will NOT receive the file.
-
-**Template for media responses:**
-
-```
-<your warm text about what was generated, include cost>
-
-MEDIA:<exact path from script output>
-
-<optional follow-up suggestion>
+OUTPUT_FILE:/tmp/openclaw/rh-output/puppy.jpg
 ```
 
-Example responses by media type:
+**You MUST use the `message` tool to deliver the file.** Call:
+```json
+{ "action": "send", "text": "<warm text with cost>", "media": "<path from OUTPUT_FILE>" }
+```
+Then respond with `NO_REPLY`.
 
-- **Image**:
-  > 搞定啦！橘猫荡秋千的图来了～ 花了 ¥0.12
-  >
-  > MEDIA:/tmp/openclaw/rh-output/2026-03-13-cat-swing.jpg
-  >
-  > 要不要我帮你把它做成视频？🐱
+**Example — Image:**
+1. Script output: `OUTPUT_FILE:/tmp/openclaw/rh-output/2026-03-13-cat.jpg` + `COST:¥0.12`
+2. Call `message`: `{ "action": "send", "text": "搞定啦！橘猫来了～ 花了 ¥0.12\n要不要做成视频？🐱", "media": "/tmp/openclaw/rh-output/2026-03-13-cat.jpg" }`
+3. Text response: `NO_REPLY`
 
-- **Video**:
-  > 视频来啦～ 用万相2.6生成的，花了 ¥0.35
-  >
-  > MEDIA:/tmp/openclaw/rh-output/2026-03-13-dance-video.mp4
-  >
-  > 画面还满意吗？我还能帮你加配音或者做个封面图哦！
+**Example — Video:**
+1. Script output: `OUTPUT_FILE:/tmp/openclaw/rh-output/2026-03-13-dance.mp4` + `COST:¥0.35`
+2. Call `message`: `{ "action": "send", "text": "视频来啦～ 用万相2.6生成的，花了 ¥0.35\n画面还满意吗？", "media": "/tmp/openclaw/rh-output/2026-03-13-dance.mp4" }`
+3. Text response: `NO_REPLY`
 
-- **Audio**:
-  > 语音生成好了！花了 ¥0.05
-  >
-  > MEDIA:/tmp/openclaw/rh-output/2026-03-13-voice.mp3
-  >
-  > 试听一下，不满意我可以换个音色再来～
-
-- **3D**:
-  > 3D 模型搞定！花了 ¥1.20
-  >
-  > MEDIA:/tmp/openclaw/rh-output/2026-03-13-model.glb
-  >
-  > 文件是 GLB 格式，可以直接导入 Blender 或者在浏览器里预览哦～
+**Example — Audio:**
+1. Script output: `OUTPUT_FILE:/tmp/openclaw/rh-output/2026-03-13-voice.mp3` + `COST:¥0.05`
+2. Call `message`: `{ "action": "send", "text": "语音生成好了！花了 ¥0.05\n试听一下～", "media": "/tmp/openclaw/rh-output/2026-03-13-voice.mp3" }`
+3. Text response: `NO_REPLY`
 
 ### Cost reporting
 
-After each successful task, the script prints a `COST:` line with the amount consumed:
+After each successful task, the script prints a `COST:` line:
 ```
 COST:¥0.50
 ```
 
-If the task took significant time, it also prints:
-```
-DURATION:12s
-```
+**ALWAYS include the cost naturally** in the `message` text — "花了 ¥0.50" not "Cost: ¥0.50".
 
-**ALWAYS include the cost naturally in your response** — weave it in like "花了 ¥0.50" rather than "Cost: ¥0.50".
-
-If `COST:` is not present in the output (consumeMoney was null), skip the cost info — don't mention "free" or "¥0".
+If `COST:` is not present in the output, skip cost info — don't mention "free" or "¥0".
 
 ### Text results (understanding endpoints)
 
-The script prints the text content directly, followed by optional `COST:` / `DURATION:` lines. Relay the text to the user and include cost info naturally.
+The script prints text content directly. Relay it to the user normally (no `message` tool needed for text-only results). Include cost if available.
 
 ### Errors
 
 The script prints JSON with an `error` field. See the Error Handling table above. When reporting errors, stay warm:
-- Don't just dump error messages. Explain what happened in plain language and offer a fix.
 - Balance issue: "余额不够啦～ 充值一下就能继续创作了！"
 - Task failed: "哎呀这次没生成成功，可能是图片格式问题。换一张试试？"
 
