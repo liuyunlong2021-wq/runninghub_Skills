@@ -5,7 +5,7 @@
 For video, AI app, 3D, and music generation: **ALWAYS send a `message` notification BEFORE starting the script.** These tasks take 1-10+ minutes. Users must know the task has started.
 
 ```json
-{ "action": "send", "text": "开始生成啦，视频一般需要 1-3 分钟，请稍等～ 🎬", "target": "<user>" }
+{ "action": "send", "text": "开始生成啦，视频一般需要几分钟，请稍等～ 🎬", "target": "<user>" }
 ```
 
 Do this BEFORE calling `exec` to run the script. For fast tasks (text-to-image, image upscale, TTS), notification is optional.
