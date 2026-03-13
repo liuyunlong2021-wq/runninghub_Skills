@@ -4,7 +4,7 @@
 
 Universal media generation skill for [OpenClaw](https://github.com/openclaw/openclaw), powered by [RunningHub](https://www.runninghub.cn) API.
 
-**170+ endpoints** covering image, video, audio, 3D model generation, and multimodal text understanding.
+**170+ standard API endpoints + unlimited AI Apps** — covering image, video, audio, 3D model generation, multimodal text understanding, and any user-created AI Application (ComfyUI workflow).
 
 ## Capabilities
 
@@ -15,6 +15,7 @@ Universal media generation skill for [OpenClaw](https://github.com/openclaw/open
 | **Audio** | 8 | text-to-speech, music generation, voice clone |
 | **3D** | 12 | text-to-3D, image-to-3D, multi-image-to-3D |
 | **Text** | 14 | image-to-text, video-to-text, text-to-text |
+| **AI Apps** | Unlimited | Run any RunningHub AI Application (custom ComfyUI workflow) |
 
 ## Quick Start
 
@@ -48,8 +49,9 @@ Once installed, just talk to your OpenClaw assistant in natural language:
 - *"Create background music for my video"*
 - *"Upscale this image to 4K"*
 - *"Convert this image to a 3D model"*
+- *"Run this AI app: https://www.runninghub.cn/ai-detail/1877265245566922800"*
 
-The assistant automatically selects the best RunningHub endpoint based on your request.
+The assistant automatically selects the best RunningHub endpoint based on your request. For AI Apps, it fetches the app's node info, guides you through parameter setup, and runs the workflow.
 
 ### Video Model Selection
 
@@ -72,13 +74,16 @@ Pick a number to start, or the default (Google Veo 3.1 Fast) is used automatical
 runninghub/
 ├── SKILL.md                        # OpenClaw skill definition (routing table + examples)
 ├── scripts/
-│   ├── runninghub.py               # Universal API client (170+ endpoints)
+│   ├── runninghub.py               # Standard model API client (170+ endpoints)
+│   ├── runninghub_app.py           # AI Application client (custom ComfyUI workflows)
 │   └── build_capabilities.py       # Generates capabilities.json from models_registry.json
 └── data/
     └── capabilities.json           # Full endpoint catalog (auto-generated)
 ```
 
 ## Script Modes
+
+### Standard Model API (runninghub.py)
 
 | Mode | Command | Purpose |
 |------|---------|---------|
@@ -87,6 +92,14 @@ runninghub/
 | **Info** | `--info ENDPOINT` | View endpoint parameters |
 | **Execute** | `--endpoint EP --prompt "..." -o /tmp/out` | Run with specific endpoint |
 | **Auto** | `--task TASK --prompt "..." -o /tmp/out` | Auto-select best endpoint |
+
+### AI Application (runninghub_app.py)
+
+| Mode | Command | Purpose |
+|------|---------|---------|
+| **Check** | `--check` | Verify API key + check wallet balance |
+| **Nodes** | `--info WEBAPP_ID` | Show modifiable nodes for an AI app |
+| **Execute** | `--run WEBAPP_ID --node ... --file ... -o /tmp/out` | Run an AI application |
 
 ## Updating Capabilities
 

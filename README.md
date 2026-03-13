@@ -4,7 +4,7 @@
 
 为 [OpenClaw](https://github.com/openclaw/openclaw) 打造的通用多媒体生成技能，由 [RunningHub](https://www.runninghub.cn) API 驱动。
 
-**170+ 个 API 端点**，覆盖图片、视频、音频、3D 模型生成和多模态文本理解。
+**170+ 个标准 API 端点 + 无限 AI 应用**，覆盖图片、视频、音频、3D 模型生成、多模态文本理解，以及任意用户创建的 AI 应用（ComfyUI 工作流）。
 
 ## 能力一览
 
@@ -15,6 +15,7 @@
 | **音频** | 8 | 文字转语音、音乐生成、声音克隆 |
 | **3D** | 12 | 文字转 3D、图片转 3D、多图转 3D |
 | **文本** | 14 | 图片理解、视频理解、文本处理 |
+| **AI 应用** | 无限 | 运行任意 RunningHub AI 应用（自定义 ComfyUI 工作流） |
 
 ## 快速开始
 
@@ -48,8 +49,9 @@
 - *"给我的视频配个背景音乐"*
 - *"把这张图放大到 4K"*
 - *"把这张图转成 3D 模型"*
+- *"帮我跑这个 AI 应用 https://www.runninghub.cn/ai-detail/1877265245566922800"*
 
-助手会自动选择最合适的 RunningHub 端点来完成你的请求。
+助手会自动选择最合适的 RunningHub 端点来完成你的请求；如果是 AI 应用，则获取应用节点信息、引导你设置参数并运行。
 
 ### 视频生成交互
 
@@ -72,13 +74,16 @@
 runninghub/
 ├── SKILL.md                        # OpenClaw 技能定义（路由表 + 示例 + 交互规则）
 ├── scripts/
-│   ├── runninghub.py               # 通用 API 客户端（170+ 端点）
+│   ├── runninghub.py               # 标准模型 API 客户端（170+ 端点）
+│   ├── runninghub_app.py           # AI 应用客户端（自定义 ComfyUI 工作流）
 │   └── build_capabilities.py       # 从 models_registry.json 生成 capabilities.json
 └── data/
     └── capabilities.json           # 完整端点目录（自动生成）
 ```
 
 ## 脚本模式
+
+### 标准模型 API（runninghub.py）
 
 | 模式 | 命令 | 用途 |
 |------|------|------|
@@ -87,6 +92,14 @@ runninghub/
 | **详情** | `--info ENDPOINT` | 查看端点参数 |
 | **执行** | `--endpoint EP --prompt "..." -o /tmp/out` | 使用指定端点执行 |
 | **自动** | `--task TASK --prompt "..." -o /tmp/out` | 自动选择最佳端点 |
+
+### AI 应用（runninghub_app.py）
+
+| 模式 | 命令 | 用途 |
+|------|------|------|
+| **检查** | `--check` | 验证 API Key + 查询余额 |
+| **节点** | `--info WEBAPP_ID` | 查看 AI 应用的可修改节点 |
+| **执行** | `--run WEBAPP_ID --node ... --file ... -o /tmp/out` | 运行 AI 应用 |
 
 ## 更新能力目录
 
