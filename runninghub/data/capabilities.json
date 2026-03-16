@@ -1,6 +1,6 @@
 {
-  "version": "2026-03-13",
-  "total": 170,
+  "version": "2026-03-17",
+  "total": 179,
   "endpoints": [
     {
       "endpoint": "hunyuan3d-v3.1/image-to-3d",
@@ -89,8 +89,8 @@
     },
     {
       "endpoint": "hitem3d-v15/image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-v15/image-to-3d",
+      "name_en": "hitem3d-v15/image-to-3d",
       "task": "image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -136,8 +136,8 @@
     },
     {
       "endpoint": "hitem3d-v2/image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-v2/image-to-3d",
+      "name_en": "hitem3d-v2/image-to-3d",
       "task": "image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -181,8 +181,8 @@
     },
     {
       "endpoint": "hitem3d-portrait-v21/image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-portrait-v21/image-to-3d",
+      "name_en": "hitem3d-portrait-v21/image-to-3d",
       "task": "image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -225,8 +225,8 @@
     },
     {
       "endpoint": "hitem3d-portrait-v20/image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-portrait-v20/image-to-3d",
+      "name_en": "hitem3d-portrait-v20/image-to-3d",
       "task": "image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -269,8 +269,8 @@
     },
     {
       "endpoint": "hitem3d-portrait-v15/image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-portrait-v15/image-to-3d",
+      "name_en": "hitem3d-portrait-v15/image-to-3d",
       "task": "image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -313,8 +313,8 @@
     },
     {
       "endpoint": "rhart-image-n-pro/edit",
-      "name_cn": "全能图片PRO-图生图",
-      "name_en": "nano-banana-pro/edit",
+      "name_cn": "全能图片PRO-图生图-低价渠道版",
+      "name_en": "nano-banana-pro/edit-channel-low-price",
       "task": "image-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -373,8 +373,8 @@
     },
     {
       "endpoint": "rhart-image-g-1.5/edit",
-      "name_cn": "全能图片G-1.5-图生图",
-      "name_en": "gpt-image-1.5/edit",
+      "name_cn": "全能图片G-1.5-图生图-低价渠道版",
+      "name_en": "gpt-image-1.5/edit-channel-low-price",
       "task": "image-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -459,8 +459,8 @@
     },
     {
       "endpoint": "rhart-image-n-g31-flash/image-to-image",
-      "name_cn": "全能图片V2-图生图",
-      "name_en": "nano-banana2-gemini31flash/image-to-image",
+      "name_cn": "全能图片V2-图生图-低价渠道版",
+      "name_en": "nano-banana2-gemini31flash/image-to-image-channel-low-price",
       "task": "image-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -520,8 +520,8 @@
     },
     {
       "endpoint": "rhart-image-n-pro-official/edit",
-      "name_cn": "全能图片PRO-官方-图生图",
-      "name_en": "nano-banana-pro-official/edit",
+      "name_cn": "全能图片PRO-图生图-官方稳定版",
+      "name_en": "nano-banana-pro/edit-official-stable",
       "task": "image-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -578,8 +578,8 @@
     },
     {
       "endpoint": "rhart-image-n-pro-official/edit-ultra",
-      "name_cn": "全能图片PRO-官方-图生图Ultra",
-      "name_en": "nano-banana-pro-official/edit-ultra",
+      "name_cn": "全能图片PRO-图生图Ultra-官方稳定版",
+      "name_en": "nano-banana-pro/edit-ultra-official-stable",
       "task": "image-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -848,8 +848,8 @@
     },
     {
       "endpoint": "rhart-image-v1/edit",
-      "name_cn": "全能图片V1-图生图",
-      "name_en": "nano-banana/edit",
+      "name_cn": "全能图片V1-图生图-低价渠道版",
+      "name_en": "nano-banana/edit-channel-low-price",
       "task": "image-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -1033,8 +1033,8 @@
     },
     {
       "endpoint": "rhart-image-n-g31-flash-official/image-to-image",
-      "name_cn": "全能图片V2-官方-图生图",
-      "name_en": "nano-banana2-gemini31flash-official/image-to-image",
+      "name_cn": "全能图片V2-图生图-官方稳定版",
+      "name_en": "nano-banana2-gemini31flash/image-to-image-official-stable",
       "task": "image-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -1095,8 +1095,8 @@
     },
     {
       "endpoint": "rhart-image-g-1.5-official/image-to-image",
-      "name_cn": "全能图片G-1.5-官方-图生图",
-      "name_en": "gpt-image-1.5-official/image-to-image",
+      "name_cn": "全能图片G-1.5-图生图-官方稳定版",
+      "name_en": "gpt-image-1.5/image-to-image-official-stable",
       "task": "image-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -1339,8 +1339,8 @@
     },
     {
       "endpoint": "rhart-video-s/image-to-video",
-      "name_cn": "全能视频S-图生视频",
-      "name_en": "sora-2/image-to-video",
+      "name_cn": "全能视频S-图生视频-低价渠道版",
+      "name_en": "sora-2/image-to-video-channel-low-price",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -1390,8 +1390,8 @@
     },
     {
       "endpoint": "rhart-video-s/image-to-video-pro",
-      "name_cn": "全能视频S-图生视频-pro",
-      "name_en": "sora-2/image-to-video-pro",
+      "name_cn": "全能视频S-图生视频-pro-低价渠道版",
+      "name_en": "sora-2/image-to-video-pro-channel-low-price",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -1443,8 +1443,8 @@
     },
     {
       "endpoint": "rhart-video-s-official/image-to-video",
-      "name_cn": "全能视频S-官方-图生视频",
-      "name_en": "sora-2-official/image-to-video",
+      "name_cn": "全能视频S-图生视频-官方稳定版",
+      "name_en": "sora-2/image-to-video-official-stable",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -1480,8 +1480,8 @@
     },
     {
       "endpoint": "rhart-video-s-official/image-to-video-pro",
-      "name_cn": "全能视频S-官方-图生视频-pro",
-      "name_en": "sora-2-official/image-to-video-pro",
+      "name_cn": "全能视频S-图生视频-pro-官方稳定版",
+      "name_en": "sora-2/image-to-video-pro-official-stable",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -1528,8 +1528,8 @@
     },
     {
       "endpoint": "rhart-video-s-official/image-to-video-realistic",
-      "name_cn": "全能视频S-官方-图生视频-支持真人",
-      "name_en": "sora-2-official/image-to-video-realistic",
+      "name_cn": "全能视频S-图生视频-支持真人-官方稳定版",
+      "name_en": "sora-2/image-to-video-realistic-official-stable",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -2027,8 +2027,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-pro/image-to-video",
-      "name_cn": "全能视频V3.1-pro-图生视频",
-      "name_en": "google/veo3.1-pro/image-to-video",
+      "name_cn": "全能视频V3.1-pro-图生视频-低价渠道版",
+      "name_en": "google/veo3.1-pro/image-to-video-channel-low-price",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -2073,8 +2073,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-fast/image-to-video",
-      "name_cn": "全能视频V3.1-fast-图生视频",
-      "name_en": "google/veo3.1-fast/image-to-video",
+      "name_cn": "全能视频V3.1-fast-图生视频-低价渠道版",
+      "name_en": "google/veo3.1-fast/image-to-video-channel-low-price",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -2132,8 +2132,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-pro-official/image-to-video",
-      "name_cn": "全能视频V3.1-pro-图生视频 - 官方",
-      "name_en": "google/veo3.1-pro-official/image-to-video",
+      "name_cn": "全能视频V3.1-pro-图生视频-官方稳定版",
+      "name_en": "google/veo3.1-pro/image-to-video-official-stable",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -2214,8 +2214,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-fast-official/image-to-video",
-      "name_cn": "全能视频V3.1-fast-图生视频 - 官方",
-      "name_en": "google/veo3.1-fast-official/image-to-video",
+      "name_cn": "全能视频V3.1-fast-图生视频-官方稳定版",
+      "name_en": "google/veo3.1-fast/image-to-video-official-stable",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -2296,8 +2296,8 @@
     },
     {
       "endpoint": "rhart-video-g/image-to-video",
-      "name_cn": "全能视频G-图生视频",
-      "name_en": "xai/grok-imagine/image-to-video",
+      "name_cn": "全能视频X-图生视频-低价渠道版",
+      "name_en": "xai/grok-imagine/image-to-video-channel-low-price",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -2355,8 +2355,8 @@
     },
     {
       "endpoint": "rhart-video-g-official/image-to-video",
-      "name_cn": "全能视频G--官方-图生视频",
-      "name_en": "xai/grok-imagine-official/image-to-video",
+      "name_cn": "全能视频X-图生视频-官方稳定版",
+      "name_en": "xai/grok-imagine/image-to-video-official-stable",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video G",
@@ -3416,8 +3416,8 @@
     },
     {
       "endpoint": "rhart-video-s/image-to-video-asyn",
-      "name_cn": "全能视频S-图生视频（异步）",
-      "name_en": "sora-2/image-to-video-asyn",
+      "name_cn": "全能视频S-图生视频（异步）-低价渠道版",
+      "name_en": "sora-2/image-to-video-asyn-channel-low-price",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -3456,6 +3456,82 @@
           "required": false,
           "default": "基于原图生成10秒动态视频，角色使用地道男声京腔配音，语气带点胡同大爷的调侃劲儿。 0–2秒：狸花猫翘着二郎腿，爪尖轻敲桌面，斜眼笑：“咱这节目今天炸了啊！” 2–5秒：哈士奇一愣，领结歪了也不管，急问：“真的啊？咱上热搜了？” 5–10秒：哈士奇瞬间石化，瞳孔地震；狸花猫憋不住，“噗”地笑出声，拍桌打滚，耳机滑到耳朵尖，背景霓虹灯“Whisker & Howl”同步闪红——全场爆笑收尾！",
           "maxLength": 4000
+        }
+      ]
+    },
+    {
+      "endpoint": "pixverse-v5.5/image-to-video",
+      "name_cn": "PixVerse V5.5 图生视频",
+      "name_en": "pixverse-v5.5/image-to-video",
+      "task": "image-to-video",
+      "output_type": "video",
+      "category": "RunningHub/PixVerse",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "maxLength": 2048
+        },
+        {
+          "key": "imageUrl",
+          "type": "IMAGE",
+          "required": true,
+          "maxSizeMB": 10
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "360p",
+            "540p",
+            "720p",
+            "1080p"
+          ],
+          "default": "540p"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "5",
+            "8",
+            "10"
+          ],
+          "default": "5"
+        },
+        {
+          "key": "generateAudioSwitch",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": false
+        },
+        {
+          "key": "generateMultiClipSwitch",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": false
+        },
+        {
+          "key": "thinkingType",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "auto",
+            "enabled",
+            "disabled"
+          ],
+          "default": "auto"
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 2048
         }
       ]
     },
@@ -3993,8 +4069,8 @@
     },
     {
       "endpoint": "hitem3d-v15/multi-image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-v15/multi-image-to-3d",
+      "name_en": "hitem3d-v15/multi-image-to-3d",
       "task": "multi-image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -4055,8 +4131,8 @@
     },
     {
       "endpoint": "hitem3d-v2/multi-image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-v2/multi-image-to-3d",
+      "name_en": "hitem3d-v2/multi-image-to-3d",
       "task": "multi-image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -4115,8 +4191,8 @@
     },
     {
       "endpoint": "hitem3d-portrait-v21/multi-image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-portrait-v21/multi-image-to-3d",
+      "name_en": "hitem3d-portrait-v21/multi-image-to-3d",
       "task": "multi-image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -4174,8 +4250,8 @@
     },
     {
       "endpoint": "hitem3d-portrait-v20/multi-image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-portrait-v20/multi-image-to-3d",
+      "name_en": "hitem3d-portrait-v20/multi-image-to-3d",
       "task": "multi-image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -4233,8 +4309,8 @@
     },
     {
       "endpoint": "hitem3d-portrait-v15/multi-image-to-3d",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "hitem3d-portrait-v15/multi-image-to-3d",
+      "name_en": "hitem3d-portrait-v15/multi-image-to-3d",
       "task": "multi-image-to-3d",
       "output_type": "3d",
       "category": "RunningHub/HiTem3D",
@@ -4701,8 +4777,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-pro-official/reference-to-video",
-      "name_cn": "全能视频V3.1-pro-参考生视频-官方",
-      "name_en": "google/veo3.1-pro-official/reference-to-video",
+      "name_cn": "全能视频V3.1-pro-参考生视频-官方稳定版",
+      "name_en": "google/veo3.1-pro/reference-to-video-official-stable",
       "task": "reference-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -4758,8 +4834,8 @@
     },
     {
       "endpoint": "kling-video-o3-std/reference-to-video",
-      "name_cn": "kling-video-o3-std-reference-to-video",
-      "name_en": "kling-video-o3-std-reference-to-video",
+      "name_cn": "kling-video-o3-std/reference-to-video",
+      "name_en": "kling-video-o3-std/reference-to-video",
       "task": "reference-to-video",
       "output_type": "video",
       "category": "RunningHub/Kling",
@@ -4824,8 +4900,8 @@
     },
     {
       "endpoint": "kling-video-o3-pro/reference-to-video",
-      "name_cn": "kling-video-o3-pro-reference-to-video",
-      "name_en": "kling-video-o3-pro-reference-to-video",
+      "name_cn": "kling-video-o3-pro/reference-to-video",
+      "name_en": "kling-video-o3-pro/reference-to-video",
       "task": "reference-to-video",
       "output_type": "video",
       "category": "RunningHub/Kling",
@@ -4890,8 +4966,8 @@
     },
     {
       "endpoint": "alibaba/wan-2.6/reference-to-video-flash",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "万相2.6-参考生视频Flash",
+      "name_en": "wan-2.6-reference-to-video-flash",
       "task": "reference-to-video",
       "output_type": "video",
       "category": "RunningHub/Wan",
@@ -4979,8 +5055,8 @@
     },
     {
       "endpoint": "alibaba/wan-2.6/reference-to-video",
-      "name_cn": "",
-      "name_en": "",
+      "name_cn": "万相2.6-参考生视频",
+      "name_en": "wan-2.6-reference-to-video",
       "task": "reference-to-video",
       "output_type": "video",
       "category": "RunningHub/Wan",
@@ -5055,6 +5131,75 @@
             "multi"
           ],
           "default": "single"
+        }
+      ]
+    },
+    {
+      "endpoint": "vidu/reference-to-video-q3",
+      "name_cn": "Vidu-参考生视频-q3",
+      "name_en": "Vidu-reference-to-video-q3",
+      "task": "reference-to-video",
+      "output_type": "video",
+      "category": "RunningHub/Vidu",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "让 @图1 的人物在海边马路中漫步，阳光透过树叶洒下斑驳的光影",
+          "maxLength": 5000
+        },
+        {
+          "key": "imageUrls",
+          "type": "IMAGE",
+          "required": true,
+          "multiple": true,
+          "maxCount": 7,
+          "maxSizeMB": 50
+        },
+        {
+          "key": "duration",
+          "type": "INT",
+          "required": true,
+          "default": 5,
+          "min": 3,
+          "max": 16
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "key": "aspectRatio",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4",
+            "1:1",
+            "auto"
+          ],
+          "default": "16:9"
+        },
+        {
+          "key": "audio",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "true",
+            "false"
+          ],
+          "default": "true"
         }
       ]
     },
@@ -5278,8 +5423,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-fast/start-end-to-video",
-      "name_cn": "全能视频V3.1-fast-首尾帧生视频",
-      "name_en": "google/veo3.1-fast/start-end-to-video",
+      "name_cn": "全能视频V3.1-fast-首尾帧生视频-低价渠道版",
+      "name_en": "google/veo3.1-fast/start-end-to-video-channel-low-price",
       "task": "start-end-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -5341,8 +5486,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-pro/start-end-to-video",
-      "name_cn": "全能视频V3.1-pro-首尾帧生视频",
-      "name_en": "google/veo3.1-pro/start-end-to-video",
+      "name_cn": "全能视频V3.1-pro-首尾帧生视频-低价渠道版",
+      "name_en": "google/veo3.1-pro/start-end-to-video-channel-low-price",
       "task": "start-end-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -5697,8 +5842,8 @@
     },
     {
       "endpoint": "rhart-image-n-pro/text-to-image",
-      "name_cn": "全能图片PRO-文生图",
-      "name_en": "nano-banana-pro/text-to-image",
+      "name_cn": "全能图片PRO-文生图-低价渠道版",
+      "name_en": "nano-banana-pro/text-to-image-channel-low-price",
       "task": "text-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -5749,8 +5894,8 @@
     },
     {
       "endpoint": "rhart-image-g-1.5/text-to-image",
-      "name_cn": "全能图片G-1.5-文生图",
-      "name_en": "gpt-image-1.5/text-to-image",
+      "name_cn": "全能图片G-1.5-文生图-低价渠道版",
+      "name_en": "gpt-image-1.5/text-to-image-channel-low-price",
       "task": "text-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -5815,8 +5960,8 @@
     },
     {
       "endpoint": "rhart-image-n-g31-flash/text-to-image",
-      "name_cn": "全能图片V2-文生图",
-      "name_en": "nano-banana2-gemini31flash/text-to-image",
+      "name_cn": "全能图片V2-文生图-低价渠道版",
+      "name_en": "nano-banana2-gemini31flash/text-to-image-channel-low-price",
       "task": "text-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -5868,8 +6013,8 @@
     },
     {
       "endpoint": "rhart-image-n-pro-official/text-to-image",
-      "name_cn": "全能图片PRO-官方-文生图",
-      "name_en": "nano-banana-pro-official/text-to-image",
+      "name_cn": "全能图片PRO-文生图-官方稳定版",
+      "name_en": "nano-banana-pro/text-to-image-official-stable",
       "task": "text-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -5919,8 +6064,8 @@
     },
     {
       "endpoint": "rhart-image-n-pro-official/text-to-image-ultra",
-      "name_cn": "全能图片PRO-官方-文生图Ultra",
-      "name_en": "nano-banana-pro-official/text-to-image-ultra",
+      "name_cn": "全能图片PRO-文生图Ultra-官方稳定版",
+      "name_en": "nano-banana-pro/text-to-image-ultra-official-stable",
       "task": "text-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -6166,8 +6311,8 @@
     },
     {
       "endpoint": "rhart-image-v1/text-to-image",
-      "name_cn": "全能图片V1-文生图",
-      "name_en": "nano-banana/text-to-image",
+      "name_cn": "全能图片V1-文生图-低价渠道版",
+      "name_en": "nano-banana/text-to-image-channel-low-price",
       "task": "text-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -6954,8 +7099,8 @@
     },
     {
       "endpoint": "rhart-image-n-g31-flash-official/text-to-image",
-      "name_cn": "全能图片V2-官方-文生图",
-      "name_en": "nano-banana2-gemini31flash-official/text-to-image",
+      "name_cn": "全能图片V2-文生图-官方稳定版",
+      "name_en": "nano-banana2-gemini31flash/text-to-image-official-stable",
       "task": "text-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -7008,8 +7153,8 @@
     },
     {
       "endpoint": "rhart-image-g-1.5-official/text-to-image",
-      "name_cn": "全能图片G-1.5-官方-文生图",
-      "name_en": "gpt-image-1.5-official/text-to-image",
+      "name_cn": "全能图片G-1.5-文生图-官方稳定版",
+      "name_en": "gpt-image-1.5/text-to-image-official-stable",
       "task": "text-to-image",
       "output_type": "image",
       "category": "RunningHub/RHArt Image",
@@ -7046,6 +7191,146 @@
             "high"
           ],
           "default": "medium"
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/qwen-image-2.0-pro/text-to-image",
+      "name_cn": "千问2.0Pro-文生图",
+      "name_en": "qwen-image-2.0-pro/text-to-image",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "RunningHub/Alibaba",
+      "popularity": 99,
+      "tags": [
+        "pro"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "一张超写实的未来赛博朋克咖啡师特写肖像，她在一个霓虹灯闪烁的下雨天咖啡馆里工作。她穿着半透明的材质雨衣，里面是一件带有发光电路纹理的衬衫。窗户上的雨滴清晰可见，并反射出街外粉色和蓝色的繁华霓虹灯招牌。极高细节，电影级光影，35mm镜头拍摄的摄影质感。",
+          "maxLength": 800
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 500
+        },
+        {
+          "key": "size",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "1024*1024",
+            "1536*1536",
+            "768*1152",
+            "1024*1536",
+            "1152*768",
+            "1536*1024",
+            "960*1280",
+            "1080*1440",
+            "1280*960",
+            "1440*1080",
+            "720*1280",
+            "1080*1920",
+            "1280*720",
+            "1920*1080",
+            "1344*576",
+            "2048*872"
+          ],
+          "default": "1024*1024"
+        },
+        {
+          "key": "imageNum",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "default": "1"
+        },
+        {
+          "key": "promptExtend",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/qwen-image-2.0/text-to-image",
+      "name_cn": "千问2.0-文生图",
+      "name_en": "qwen-image-2.0/text-to-image",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "RunningHub/Alibaba",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "一幅精美的 3D 等距视角插画，展示了一间温馨的森林魔法药水小店。木制货架上摆满了装着发光的绿色和紫色液体的玻璃瓶。一只毛茸茸的小黑猫蜷缩在木制柜台上睡觉。柔和的环境光，温暖的色彩，治愈系黏土动画风格，构图干净整洁。",
+          "maxLength": 800
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 500
+        },
+        {
+          "key": "size",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "1024*1024",
+            "1536*1536",
+            "768*1152",
+            "1024*1536",
+            "1152*768",
+            "1536*1024",
+            "960*1280",
+            "1080*1440",
+            "1280*960",
+            "1440*1080",
+            "720*1280",
+            "1080*1920",
+            "1280*720",
+            "1920*1080",
+            "1344*576",
+            "2048*872"
+          ],
+          "default": "1024*1024"
+        },
+        {
+          "key": "imageNum",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "default": "1"
+        },
+        {
+          "key": "promptExtend",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true
         }
       ]
     },
@@ -7624,8 +7909,8 @@
     },
     {
       "endpoint": "rhart-video-s/text-to-video",
-      "name_cn": "全能视频S-文生视频",
-      "name_en": "sora-2/text-to-video",
+      "name_cn": "全能视频S-文生视频-低价渠道版",
+      "name_en": "sora-2/text-to-video-channel-low-price",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -7669,8 +7954,8 @@
     },
     {
       "endpoint": "rhart-video-s/text-to-video-pro",
-      "name_cn": "全能视频S-文生视频-pro",
-      "name_en": "sora-2/text-to-video-pro",
+      "name_cn": "全能视频S-文生视频-pro-低价渠道版",
+      "name_en": "sora-2/text-to-video-pro-channel-low-price",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -7716,8 +8001,8 @@
     },
     {
       "endpoint": "rhart-video-s-official/text-to-video",
-      "name_cn": "全能视频S-官方-文生视频",
-      "name_en": "sora-2-official/text-to-video",
+      "name_cn": "全能视频S-文生视频-官方稳定版",
+      "name_en": "sora-2/text-to-video-official-stable",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -7757,8 +8042,8 @@
     },
     {
       "endpoint": "rhart-video-s-official/text-to-video-pro",
-      "name_cn": "全能视频S-官方-文生视频-pro",
-      "name_en": "sora-2-official/text-to-video-pro",
+      "name_cn": "全能视频S-文生视频-pro-官方稳定版",
+      "name_en": "sora-2/text-to-video-pro-official-stable",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -8206,8 +8491,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-pro/text-to-video",
-      "name_cn": "全能视频V3.1-pro-文生视频",
-      "name_en": "google/veo3.1-pro/text-to-video",
+      "name_cn": "全能视频V3.1-pro-文生视频-低价渠道版",
+      "name_en": "google/veo3.1-pro/text-to-video-channel-low-price",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -8257,8 +8542,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-fast/text-to-video",
-      "name_cn": "全能视频V3.1-fast-文生视频",
-      "name_en": "google/veo3.1-fast/text-to-video",
+      "name_cn": "全能视频V3.1-fast-文生视频-低价渠道版",
+      "name_en": "google/veo3.1-fast/text-to-video-channel-low-price",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -8308,8 +8593,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-pro-official/text-to-video",
-      "name_cn": "全能视频V3.1-pro-文生视频 - 官方",
-      "name_en": "google/veo3.1-pro-official/text-to-video",
+      "name_cn": "全能视频V3.1-pro-文生视频-官方稳定版",
+      "name_en": "google/veo3.1-pro/text-to-video-official-stable",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -8378,8 +8663,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-fast-official/text-to-video",
-      "name_cn": "全能视频V3.1-fast-文生视频 - 官方",
-      "name_en": "google/veo3.1-fast-official/text-to-video",
+      "name_cn": "全能视频V3.1-fast-文生视频-官方稳定版",
+      "name_en": "google/veo3.1-fast/text-to-video-official-stable",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -8448,8 +8733,8 @@
     },
     {
       "endpoint": "rhart-video-g/text-to-video",
-      "name_cn": "全能视频G-文生视频",
-      "name_en": "xai/grok-imagine/text-to-video",
+      "name_cn": "全能视频X-文生视频-低价渠道版",
+      "name_en": "xai/grok-imagine/text-to-video-channel-low-price",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -8499,8 +8784,8 @@
     },
     {
       "endpoint": "rhart-video-g-official/text-to-video",
-      "name_cn": "全能视频G-官方-文生视频",
-      "name_en": "xai/grok-imagine-official/text-to-video",
+      "name_cn": "全能视频X-文生视频-官方稳定版",
+      "name_en": "xai/grok-imagine/text-to-video-official-stable",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/RHArt Video G",
@@ -9151,9 +9436,92 @@
       ]
     },
     {
+      "endpoint": "pixverse-v5.5/text-to-video",
+      "name_cn": "PixVerse V5.5 文生视频",
+      "name_en": "pixverse-v5.5/text-to-video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "RunningHub/PixVerse",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "maxLength": 2048
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 2048
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "360p",
+            "540p",
+            "720p",
+            "1080p"
+          ],
+          "default": "540p"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "5",
+            "8",
+            "10"
+          ],
+          "default": "5"
+        },
+        {
+          "key": "aspectRatio",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16"
+          ],
+          "default": "1:1"
+        },
+        {
+          "key": "generateAudioSwitch",
+          "type": "BOOLEAN",
+          "required": true,
+          "default": false
+        },
+        {
+          "key": "generateMultiClipSwitch",
+          "type": "BOOLEAN",
+          "required": true,
+          "default": false
+        },
+        {
+          "key": "thinkingType",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "auto",
+            "enabled",
+            "disabled"
+          ],
+          "default": "auto"
+        }
+      ]
+    },
+    {
       "endpoint": "rhart-video-s/sora-upload-character",
-      "name_cn": "全能视频S-角色上传",
-      "name_en": "sora-upload-character",
+      "name_cn": "全能视频S-角色上传-低价渠道版",
+      "name_en": "sora-upload-character-channel-low-price",
       "task": "upload-character",
       "output_type": "string",
       "category": "RunningHub/RHArt Video",
@@ -9221,8 +9589,8 @@
     },
     {
       "endpoint": "rhart-video-g-official/edit-video",
-      "name_cn": "全能视频G--官方-编辑视频",
-      "name_en": "xai/grok-imagine-official/edit-video",
+      "name_cn": "全能视频X-编辑视频-官方稳定版",
+      "name_en": "xai/grok-imagine/edit-video-official-stable",
       "task": "video-edit",
       "output_type": "video",
       "category": "RunningHub/RHArt Video G",
@@ -9258,8 +9626,8 @@
     },
     {
       "endpoint": "kling-video-o3-std/video-edit",
-      "name_cn": "kling-video-o3-std-video-edit",
-      "name_en": "kling-video-o3-std-video-edit",
+      "name_cn": "kling-video-o3-std/video-edit",
+      "name_en": "kling-video-o3-std/video-edit",
       "task": "video-edit",
       "output_type": "video",
       "category": "RunningHub/Kling",
@@ -9299,8 +9667,8 @@
     },
     {
       "endpoint": "kling-video-o3-pro/video-edit",
-      "name_cn": "kling-video-o3-pro-video-edit",
-      "name_en": "kling-video-o3-pro-video-edit",
+      "name_cn": "kling-video-o3-pro/video-edit",
+      "name_en": "kling-video-o3-pro/video-edit",
       "task": "video-edit",
       "output_type": "video",
       "category": "RunningHub/Kling",
@@ -9340,8 +9708,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-fast-official/video-extend",
-      "name_cn": "全能视频V3.1-fast-视频扩展- 官方",
-      "name_en": "google/veo3.1-fast/video-extend-official",
+      "name_cn": "全能视频V3.1-fast-视频扩展-官方稳定版",
+      "name_en": "google/veo3.1-fast/video-extend-official-stable",
       "task": "video-extend",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -9387,8 +9755,8 @@
     },
     {
       "endpoint": "rhart-video-v3.1-pro-official/video-extend",
-      "name_cn": "全能视频V3.1-pro-视频扩展- 官方",
-      "name_en": "google/veo3.1-pro/video-extend-official",
+      "name_cn": "全能视频V3.1-pro-视频扩展-官方稳定版",
+      "name_en": "google/veo3.1-pro/video-extend-official-stable",
       "task": "video-extend",
       "output_type": "video",
       "category": "RunningHub/RHArt Video",
@@ -9567,6 +9935,247 @@
             "10"
           ],
           "default": "6"
+        }
+      ]
+    },
+    {
+      "endpoint": "bytedance/dreamactor-v2",
+      "name_cn": "即梦/动作模仿2.0",
+      "name_en": "bytedance/dreamactor-v2",
+      "task": "video-other",
+      "output_type": "video",
+      "category": "RunningHub/Seedance",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "imageUrl",
+          "type": "IMAGE",
+          "required": true,
+          "maxSizeMB": 5
+        },
+        {
+          "key": "videoUrl",
+          "type": "VIDEO",
+          "required": true,
+          "maxSizeMB": 100
+        }
+      ]
+    },
+    {
+      "endpoint": "pixverse-v5.5-transition",
+      "name_cn": "PixVerse V5.5 转场",
+      "name_en": "pixverse-v5.5-transition",
+      "task": "video-other",
+      "output_type": "video",
+      "category": "RunningHub/PixVerse",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "maxLength": 2048
+        },
+        {
+          "key": "imageUrl",
+          "type": "IMAGE",
+          "required": true,
+          "maxSizeMB": 20
+        },
+        {
+          "key": "endImageUrl",
+          "type": "IMAGE",
+          "required": true,
+          "maxSizeMB": 20
+        },
+        {
+          "key": "aspectRatio",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "16:9",
+            "1:1",
+            "4:3",
+            "3:4",
+            "9:16"
+          ],
+          "default": "16:9"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "5",
+            "8",
+            "10"
+          ],
+          "default": "5"
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "360p",
+            "540p",
+            "720p",
+            "1080p"
+          ],
+          "default": "540p"
+        },
+        {
+          "key": "thinkingType",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "auto",
+            "enabled",
+            "disabled"
+          ],
+          "default": "auto"
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 2048
+        }
+      ]
+    },
+    {
+      "endpoint": "pixverse-v5.5-effects",
+      "name_cn": "PixVerse V5.5 特效",
+      "name_en": "pixverse-v5.5-effects",
+      "task": "video-other",
+      "output_type": "video",
+      "category": "RunningHub/PixVerse",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "imageUrl",
+          "type": "IMAGE",
+          "required": true,
+          "maxSizeMB": 10
+        },
+        {
+          "key": "effect",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "Kiss Me AI",
+            "Muscle Surge",
+            "Anything",
+            "Robot",
+            "The Tiger Touch",
+            "Holy Wings",
+            "Hulk",
+            "Venom",
+            "Microwave",
+            "Hug",
+            "Kiss",
+            "3D Figurine Factor",
+            "Baby Face",
+            "Bald Swipe",
+            "Black Myth: Wukong",
+            "BOOM DROP",
+            "Squid Game",
+            "Zombie Mode"
+          ],
+          "default": "Kiss Me AI"
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "360p",
+            "540p",
+            "720p",
+            "1080p"
+          ],
+          "default": "540p"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "5",
+            "8",
+            "10"
+          ],
+          "default": "5"
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 2048
+        },
+        {
+          "key": "thinkingType",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "auto",
+            "enabled",
+            "disabled"
+          ],
+          "default": "auto"
+        }
+      ]
+    },
+    {
+      "endpoint": "cinematic-video-generator",
+      "name_cn": "全能视频sd2.0体验版",
+      "name_en": "cinematic-video-generator-sd2.0",
+      "task": "video-other",
+      "output_type": "video",
+      "category": "RunningHub/RHArt Video",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "场景设定： 史诗般的电影广角长镜头。一位身着华丽全套板甲的中世纪骑士，手握一面破损的深蓝色战旗，正骑着一匹壮硕的战马缓慢行进在日落时分的岩石悬崖边。远处的地平线上，是一座古老且宏伟的城堡要塞。 光影与质感： 极具戏剧性的黄金时刻侧逆光（Golden hour rim lighting），空气中弥漫着尘土，高对比度的剪影效果，8K超写实画质，电影级摄影质感。 镜头与动态控制： 镜头从低角度缓慢向前推进（Push-in shot），随后平滑地环绕騎士进行航拍。重点测出：骑士红色斗篷和战旗在海风中强劲抖动的真实物理动态，以及马匹肌肉在行进时的自然起伏与尘土飞扬的效果。",
+          "maxLength": 2048
+        },
+        {
+          "key": "imageUrls",
+          "type": "IMAGE",
+          "required": false,
+          "multiple": true,
+          "maxCount": 4,
+          "maxSizeMB": 10
+        },
+        {
+          "key": "aspectRatio",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4"
+          ],
+          "default": "16:9"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "5",
+            "10",
+            "15"
+          ],
+          "default": "5"
         }
       ]
     },

@@ -2,16 +2,14 @@
 
 [中文](./README.md)
 
-Universal media generation skill for [OpenClaw](https://github.com/openclaw/openclaw), powered by [RunningHub](https://www.runninghub.cn) API.
-
-**170+ standard API endpoints + unlimited AI Apps** — covering image, video, audio, 3D model generation, multimodal text understanding, and any user-created AI Application (ComfyUI workflow).
+An [OpenClaw](https://github.com/openclaw/openclaw) skill that brings multimedia generation capabilities — including image, video, audio, 3D, and text — to conversational AI, powered by 179 [RunningHub](https://www.runninghub.cn) API endpoints. Built with zero external dependencies (pure Python 3 + curl), it lets users create rich media content through natural language, with support for both standard model APIs and custom ComfyUI workflows (AI Applications).
 
 ## Capabilities
 
 | Category | Endpoints | Tasks |
 |----------|-----------|-------|
-| **Image** | 42 | text-to-image, image-to-image, image upscale, Midjourney-style |
-| **Video** | 94 | text-to-video, image-to-video, start-end frames, video extend/edit, motion control |
+| **Image** | 44 | text-to-image, image-to-image, image upscale, Midjourney-style |
+| **Video** | 101 | text-to-video, image-to-video, start-end frames, video extend/edit, motion control |
 | **Audio** | 8 | text-to-speech, music generation, voice clone |
 | **3D** | 12 | text-to-3D, image-to-3D, multi-image-to-3D |
 | **Text** | 14 | image-to-text, video-to-text, text-to-text |
@@ -86,7 +84,7 @@ Pick a number to start, or the default (RH Image PRO) is used automatically.
 runninghub/
 ├── SKILL.md                        # OpenClaw skill definition (routing table + examples)
 ├── scripts/
-│   ├── runninghub.py               # Standard model API client (170+ endpoints)
+│   ├── runninghub.py               # Standard model API client (179 endpoints)
 │   ├── runninghub_app.py           # AI Application client (custom ComfyUI workflows)
 │   └── build_capabilities.py       # Generates capabilities.json from models_registry.json
 └── data/

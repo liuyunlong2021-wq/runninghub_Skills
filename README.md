@@ -4,14 +4,14 @@
 
 为 [OpenClaw](https://github.com/openclaw/openclaw) 打造的通用多媒体生成技能，由 [RunningHub](https://www.runninghub.cn) API 驱动。
 
-**170+ 个标准 API 端点 + 无限 AI 应用**，覆盖图片、视频、音频、3D 模型生成、多模态文本理解，以及任意用户创建的 AI 应用（ComfyUI 工作流）。
+**179 个标准 API 端点 + 无限 AI 应用**，覆盖图片、视频、音频、3D 模型生成、多模态文本理解，以及任意用户创建的 AI 应用（ComfyUI 工作流）。
 
 ## 能力一览
 
 | 类别 | 端点数 | 支持任务 |
 |------|--------|----------|
-| **图片** | 42 | 文生图、图生图、图片放大、Midjourney 风格 |
-| **视频** | 94 | 文生视频、图生视频、首尾帧生成、视频续写/编辑、运动控制 |
+| **图片** | 44 | 文生图、图生图、图片放大、Midjourney 风格 |
+| **视频** | 101 | 文生视频、图生视频、首尾帧生成、视频续写/编辑、运动控制 |
 | **音频** | 8 | 文字转语音、音乐生成、声音克隆 |
 | **3D** | 12 | 文字转 3D、图片转 3D、多图转 3D |
 | **文本** | 14 | 图片理解、视频理解、文本处理 |
@@ -86,7 +86,7 @@
 runninghub/
 ├── SKILL.md                        # OpenClaw 技能定义（路由表 + 示例 + 交互规则）
 ├── scripts/
-│   ├── runninghub.py               # 标准模型 API 客户端（170+ 端点）
+│   ├── runninghub.py               # 标准模型 API 客户端（179 端点）
 │   ├── runninghub_app.py           # AI 应用客户端（自定义 ComfyUI 工作流）
 │   └── build_capabilities.py       # 从 models_registry.json 生成 capabilities.json
 └── data/
