@@ -1,5 +1,5 @@
 {
-  "version": "2026-03-17",
+  "version": "2026-03-18",
   "total": 179,
   "endpoints": [
     {
@@ -9940,8 +9940,8 @@
     },
     {
       "endpoint": "bytedance/dreamactor-v2",
-      "name_cn": "即梦/动作模仿2.0",
-      "name_en": "bytedance/dreamactor-v2",
+      "name_cn": "Seedance 2.0 视频参考生视频(体验版)",
+      "name_en": "seedance-2.0/video-ref-to-video-trial",
       "task": "video-other",
       "output_type": "video",
       "category": "RunningHub/Seedance",
@@ -10131,11 +10131,11 @@
     },
     {
       "endpoint": "cinematic-video-generator",
-      "name_cn": "全能视频sd2.0体验版",
-      "name_en": "cinematic-video-generator-sd2.0",
+      "name_cn": "Seedance 2.0 视频生成(体验版)",
+      "name_en": "seedance-2.0/video-generator-trial",
       "task": "video-other",
       "output_type": "video",
-      "category": "RunningHub/RHArt Video",
+      "category": "RunningHub/Seedance",
       "popularity": 99,
       "tags": [],
       "params": [

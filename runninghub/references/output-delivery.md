@@ -47,6 +47,6 @@ Print the text directly to user. Include cost if `COST:` line present.
 
 ## General Notes
 
-- Video is slow (1-5 min); script auto-polls up to 15 min.
+- Video is slow (1-5 min); script auto-polls up to 20 min.
 - Images < 5MB → base64; larger → upload first.
 - Key order: `--api-key` flag → `RUNNINGHUB_API_KEY` env → config file.

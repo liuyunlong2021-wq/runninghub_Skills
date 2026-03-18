@@ -1,6 +1,6 @@
 ---
 name: runninghub
-description: "Generate images, videos, audio, and 3D models via RunningHub API (170+ endpoints) and run any RunningHub AI Application (custom ComfyUI workflow) by webappId. Covers text-to-image, image-to-video, text-to-speech, music generation, 3D modeling, image upscaling, AI apps, and more."
+description: "Generate images, videos, audio, and 3D models via RunningHub API (179 endpoints) and run any RunningHub AI Application (custom ComfyUI workflow) by webappId. Covers text-to-image, image-to-video, text-to-speech, music generation, 3D modeling, image upscaling, AI apps, and more."
 homepage: https://www.runninghub.cn
 metadata:
   {
@@ -62,6 +62,7 @@ Quick check: `python3 {baseDir}/scripts/runninghub.py --check`
 | Video editing | `rhart-video-g-official/edit-video` | |
 | Video upscale | `topazlabs/video-upscale` | |
 | Motion control | `kling-v3.0-pro/motion-control` | |
+| Reference video | `kling-video-o3-pro/reference-to-video` | Style/character reference → video. Alt: vidu, wan-2.6, seedance |
 | TTS (best) | `rhart-audio/text-to-audio/speech-2.8-hd` | HD quality |
 | TTS (fast) | `rhart-audio/text-to-audio/speech-2.8-turbo` | |
 | Music | `rhart-audio/text-to-audio/music-2.5` | |
