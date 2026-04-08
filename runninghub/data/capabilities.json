@@ -1,6 +1,6 @@
 {
-  "version": "2026-03-25",
-  "total": 209,
+  "version": "2026-04-08",
+  "total": 222,
   "endpoints": [
     {
       "endpoint": "rhart-image/f-dev",
@@ -509,7 +509,8 @@
           "key": "prompt",
           "type": "STRING",
           "required": true,
-          "default": "将这张线稿转换为明代水墨武侠风格的精细彩图。严格保留人物的动作轮廓与黑鸦的形态，将背景替换为风雪交加的竹林。增强水墨晕染的纹理感，整体色调偏冷，烘托出肃杀的氛围。"
+          "default": "将这张线稿转换为明代水墨武侠风格的精细彩图。严格保留人物的动作轮廓与黑鸦的形态，将背景替换为风雪交加的竹林。增强水墨晕染的纹理感，整体色调偏冷，烘托出肃杀的氛围。",
+          "maxLength": 20000
         },
         {
           "key": "aspectRatio",
@@ -925,7 +926,7 @@
       "name_en": "qwen-image-2.0-pro/image-edit",
       "task": "image-to-image",
       "output_type": "image",
-      "category": "RunningHub/Alibaba",
+      "category": "RunningHub/Qwe",
       "popularity": 12,
       "tags": [
         "pro"
@@ -997,7 +998,7 @@
       "name_en": "qwen-image-2.0/image-edit",
       "task": "image-to-image",
       "output_type": "image",
-      "category": "RunningHub/Alibaba",
+      "category": "RunningHub/Qwe",
       "popularity": 13,
       "tags": [],
       "params": [
@@ -1440,6 +1441,94 @@
             "high"
           ],
           "default": "medium"
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/wan-2.7/image-edit",
+      "name_cn": "万相2.7-图像编辑",
+      "name_en": "wan-2.7/image-edit",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "imageUrls",
+          "type": "IMAGE",
+          "required": true,
+          "multiple": true,
+          "maxCount": 9,
+          "maxSizeMB": 10
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "将人物后面的竹林换成更加真实的竹林效果，使整个画面更加真实，写实，摄影风格",
+          "maxLength": 2048
+        },
+        {
+          "key": "width",
+          "type": "INT",
+          "required": false,
+          "default": 1024,
+          "min": 512,
+          "max": 4096
+        },
+        {
+          "key": "height",
+          "type": "INT",
+          "required": false,
+          "default": 1024,
+          "min": 512,
+          "max": 4096
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/wan-2.7/image-edit-pro",
+      "name_cn": "万相2.7-图像编辑Pro",
+      "name_en": "wan-2.7/image-edit-pro",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [
+        "pro"
+      ],
+      "params": [
+        {
+          "key": "imageUrls",
+          "type": "IMAGE",
+          "required": true,
+          "multiple": true,
+          "maxCount": 9,
+          "maxSizeMB": 10
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "给女孩带上苗族的银饰头饰",
+          "maxLength": 2048
+        },
+        {
+          "key": "width",
+          "type": "INT",
+          "required": false,
+          "default": 1024,
+          "min": 512,
+          "max": 4096
+        },
+        {
+          "key": "height",
+          "type": "INT",
+          "required": false,
+          "default": 1024,
+          "min": 512,
+          "max": 4096
         }
       ]
     },
@@ -2315,7 +2404,7 @@
           "type": "STRING",
           "required": true,
           "default": "左右扭扭，蹦蹦跳跳真可爱，双手上下摇晃",
-          "maxLength": 800
+          "maxLength": 8000
         },
         {
           "key": "aspectRatio",
@@ -2361,7 +2450,7 @@
           "type": "STRING",
           "required": true,
           "default": "左右扭扭，蹦蹦跳跳真可爱，双手上下摇晃",
-          "maxLength": 800
+          "maxLength": 8000
         },
         {
           "key": "aspectRatio",
@@ -2602,7 +2691,7 @@
           "type": "IMAGE",
           "required": false,
           "multiple": true,
-          "maxCount": 1,
+          "maxCount": 7,
           "maxSizeMB": 10
         },
         {
@@ -4151,8 +4240,8 @@
     },
     {
       "endpoint": "rhart-video/sparkvideo-2.0/image-to-video",
-      "name_cn": "超能视频2.0/图生视频",
-      "name_en": "sparkvideo-2.0/image-to-video",
+      "name_cn": "Seedance2.0/图生视频",
+      "name_en": "Seedance2.0 Image to Video",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/Seedance",
@@ -4171,7 +4260,10 @@
           "required": true,
           "options": [
             "480p",
-            "720p"
+            "720p",
+            "1080p",
+            "2k",
+            "4k"
           ],
           "default": "720p"
         },
@@ -4232,8 +4324,8 @@
     },
     {
       "endpoint": "rhart-video/sparkvideo-2.0-fast/image-to-video",
-      "name_cn": "超能视频2.0-Fast/图生视频",
-      "name_en": "sparkvideo-2.0-fast/image-to-video",
+      "name_cn": "Seedance2.0-Fast/图生视频",
+      "name_en": "Seedance2.0 Fast Image to Video",
       "task": "image-to-video",
       "output_type": "video",
       "category": "RunningHub/Seedance",
@@ -4254,7 +4346,10 @@
           "required": true,
           "options": [
             "480p",
-            "720p"
+            "720p",
+            "1080p",
+            "2k",
+            "4k"
           ],
           "default": "720p"
         },
@@ -4310,6 +4405,81 @@
             "21:9"
           ],
           "default": "adaptive"
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/wan-2.7/image-to-video",
+      "name_cn": "万相2.7-图生视频",
+      "name_en": "wan-2.7/image-to-video",
+      "task": "image-to-video",
+      "output_type": "video",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": false,
+          "default": "基于首尾两张竹林武侠对决的画面，生成一段流畅自然的武侠打斗视频，保持人物造型、竹林场景一致，动作连贯，光影过渡自然，还原武侠氛围感。",
+          "maxLength": 5000
+        },
+        {
+          "key": "firstImageUrl",
+          "type": "IMAGE",
+          "required": true,
+          "maxSizeMB": 20
+        },
+        {
+          "key": "lastImageUrl",
+          "type": "IMAGE",
+          "required": false,
+          "maxSizeMB": 20
+        },
+        {
+          "key": "audioUrl",
+          "type": "AUDIO",
+          "required": false,
+          "maxSizeMB": 15
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 500
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "720P",
+            "1080P"
+          ],
+          "default": "720P"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+          ],
+          "default": "5"
         }
       ]
     },
@@ -5366,6 +5536,37 @@
       ]
     },
     {
+      "endpoint": "rhart-text-qwen-27b/chat",
+      "name_cn": "rhart-text-qwen-27b/chat",
+      "name_en": "rhart-text-qwen-27b/chat",
+      "task": "other",
+      "output_type": "string",
+      "category": "RunningHub/RHArt Text",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true
+        },
+        {
+          "key": "imageUrls",
+          "type": "IMAGE",
+          "required": false,
+          "multiple": true,
+          "maxCount": 5,
+          "maxSizeMB": 30
+        },
+        {
+          "key": "videoUrl",
+          "type": "VIDEO",
+          "required": false,
+          "maxSizeMB": 100
+        }
+      ]
+    },
+    {
       "endpoint": "kling-video-o1-std/refrence-to-video",
       "name_cn": "可灵参考生视频o1",
       "name_en": "kling-video-o1-std/refrence-to-video",
@@ -6122,6 +6323,7 @@
           "type": "LIST",
           "required": true,
           "options": [
+            "540p",
             "720p",
             "1080p"
           ],
@@ -6190,6 +6392,156 @@
           "key": "aspectRatio",
           "type": "LIST",
           "required": false,
+          "options": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:3",
+            "3:4"
+          ],
+          "default": "16:9"
+        }
+      ]
+    },
+    {
+      "endpoint": "vidu/reference-to-video-q3-mix",
+      "name_cn": "Vidu-参考生视频-q3-mix",
+      "name_en": "Vidu-reference-to-video-q3-mix",
+      "task": "reference-to-video",
+      "output_type": "video",
+      "category": "RunningHub/Vidu",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "P1：城市街道近景特写。一位穿着棕色夹克和白色T恤的亚洲年轻男子（戴着背包）在繁华的步行街上走，皱眉看着手机屏幕，寻找方向。背景是模糊的行人和店铺招牌（如“咖啡馆”）。  P2：特写。一个人的手拿着手机。手机屏幕上清晰地显示着城市地图导航界面，路线和中文地名可见。  P3：城市街道近景。同一位亚洲男子站在现代高楼大厦之间，仰头看向蓝色路牌（如“金融中心”）和天空。  P4：地铁站入口近景。亚洲男子站在地铁入口（标有“4号线入口”）前，面对一个大型地铁线路图，用手指着地图上的一个点。周围有其他行人和闸机。  P5：城市小巷中景。男子在一条老旧、有涂鸦的城市后巷中走。周围是传统的中国小店铺（如“五金部”），地面潮湿。  P6：街头小吃摊中景。亚洲男子在一个路边摊位（标有“炸油条”）前，与一位老年摊主交谈。老摊主指着某个方向。  P7：夜晚城市街道近景。男子在灯火通明的夜晚街道上走，抬起左手看手表。背景是各种霓虹灯招牌（如“夜市”、“便利店”）。  P8：复古咖啡馆中景（夜晚）。男子站在一家名为“时光咖啡馆”的复古风格咖啡馆前，与另一名男子交谈。咖啡馆内部光线温暖。  P9：咖啡馆内部近景特写（夜晚）。同一位男子坐在咖啡馆内，桌上放着一杯拿铁。他面对着笔记本电脑，微笑地打字。窗外可见模糊的城市夜景。",
+          "maxLength": 5000
+        },
+        {
+          "key": "imageUrls",
+          "type": "IMAGE",
+          "required": true,
+          "multiple": true,
+          "maxCount": 7,
+          "maxSizeMB": 50
+        },
+        {
+          "key": "duration",
+          "type": "INT",
+          "required": true,
+          "default": 5,
+          "min": 1,
+          "max": 16
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "key": "aspectRatio",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4",
+            "1:1",
+            "auto"
+          ],
+          "default": "16:9"
+        },
+        {
+          "key": "audio",
+          "type": "LIST",
+          "required": false,
+          "options": [
+            "true",
+            "false"
+          ],
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/wan-2.7/reference-to-video",
+      "name_cn": "万相2.7-参考生视频",
+      "name_en": "wan-2.7-reference-to-video",
+      "task": "reference-to-video",
+      "output_type": "video",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "视频1在弹奏图片1",
+          "maxLength": 5000
+        },
+        {
+          "key": "videoUrls",
+          "type": "VIDEO",
+          "required": false,
+          "multiple": true,
+          "maxCount": 5,
+          "maxSizeMB": 100
+        },
+        {
+          "key": "imageUrls",
+          "type": "IMAGE",
+          "required": false,
+          "multiple": true,
+          "maxCount": 5,
+          "maxSizeMB": 20
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 500
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "720P",
+            "1080P"
+          ],
+          "default": "1080P"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "default": "5"
+        },
+        {
+          "key": "aspectRatio",
+          "type": "LIST",
+          "required": true,
           "options": [
             "16:9",
             "9:16",
@@ -6436,7 +6788,7 @@
           "type": "STRING",
           "required": true,
           "default": "无缝衔接首尾帧，呈现物理驱动的跑酷飞跃：爆发起跳→滞空顶点（身体舒展）→受控下落（含风阻细节）。核心要求： 流畅动态模糊 + 影子自然位移 角色全程一致性（面容/服装/发丝） 重力与动量真实模拟 低角度镜头动态追踪跳跃弧线 同步环境音效：风声 + 落地轻响 风格：电影级写实",
-          "maxLength": 800
+          "maxLength": 8000
         },
         {
           "key": "firstFrameUrl",
@@ -6499,7 +6851,7 @@
           "type": "STRING",
           "required": true,
           "default": "首尾帧插值测试。起始帧：一名乐手在雨中街道架起小提琴；结束帧：乐手闭眼沉浸在演奏中，背景霓虹灯光拉成绚丽的流光。要求：模型需补全乐手抬起琴弓并开始拉奏的动作，背景雨滴飞溅，镜头伴随慢动作推进（Dolly-in）。同时，生成与动作节奏精准同步的、带有雨声背景的忧郁小提琴旋律。",
-          "maxLength": 800
+          "maxLength": 8000
         },
         {
           "key": "firstFrameUrl",
@@ -8271,7 +8623,7 @@
       "name_en": "qwen-image-2.0-pro/text-to-image",
       "task": "text-to-image",
       "output_type": "image",
-      "category": "RunningHub/Alibaba",
+      "category": "RunningHub/Qwe",
       "popularity": 99,
       "tags": [
         "pro"
@@ -8342,7 +8694,7 @@
       "name_en": "qwen-image-2.0/text-to-image",
       "task": "text-to-image",
       "output_type": "image",
-      "category": "RunningHub/Alibaba",
+      "category": "RunningHub/Qwe",
       "popularity": 99,
       "tags": [],
       "params": [
@@ -8399,6 +8751,90 @@
         },
         {
           "key": "promptExtend",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/wan-2.7/text-to-image",
+      "name_cn": "万相2.7-文生图",
+      "name_en": "wan-2.7/text-to-image",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "Vogue封面风格。年轻美丽的亚洲女明星身穿草莓红缎面礼服，高挑站立，一只手叉腰，另一只手撩起头发，裙摆开衩露出长腿，眼神专注，奢华的T台走廊，电影感浅景深，超细节，超写实8K魅力肖像。",
+          "maxLength": 5000
+        },
+        {
+          "key": "width",
+          "type": "INT",
+          "required": false,
+          "default": 1024,
+          "min": 512,
+          "max": 4096
+        },
+        {
+          "key": "height",
+          "type": "INT",
+          "required": false,
+          "default": 1024,
+          "min": 512,
+          "max": 4096
+        },
+        {
+          "key": "thinkingMode",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/wan-2.7/text-to-image-pro",
+      "name_cn": "万相2.7-文生图Pro",
+      "name_en": "wan-2.7/text-to-image-pro",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [
+        "pro"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "一张雪豹全身肖像照。它的一只爪子抬起，正朝我们走来。地上的雪正在融化，露出一些小小的紫色和黄色花朵以及一些草。天空中有一个幻日。后面，一块尖锐的岩石高耸入云。温暖的光线照在岩石边缘。雪豹的眼睛是耀眼的蓝色。直接眼神交流。",
+          "maxLength": 5000
+        },
+        {
+          "key": "width",
+          "type": "INT",
+          "required": false,
+          "default": 1024,
+          "min": 512,
+          "max": 4096
+        },
+        {
+          "key": "height",
+          "type": "INT",
+          "required": false,
+          "default": 1024,
+          "min": 512,
+          "max": 4096
+        },
+        {
+          "key": "thinkingMode",
           "type": "BOOLEAN",
           "required": false,
           "default": true
@@ -10902,8 +11338,8 @@
     },
     {
       "endpoint": "rhart-video/sparkvideo-2.0/text-to-video",
-      "name_cn": "超能视频2.0/文生视频",
-      "name_en": "sparkvideo-2.0/text-to-video",
+      "name_cn": "Seedance2.0/文生视频",
+      "name_en": "Seedance2.0 Text to Video",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/Seedance",
@@ -10923,7 +11359,10 @@
           "required": true,
           "options": [
             "480p",
-            "720p"
+            "720p",
+            "1080p",
+            "2k",
+            "4k"
           ],
           "default": "720p"
         },
@@ -10978,8 +11417,8 @@
     },
     {
       "endpoint": "rhart-video/sparkvideo-2.0-fast/text-to-video",
-      "name_cn": "超能视频2.0-Fast/文生视频",
-      "name_en": "sparkvideo-2.0-fast/text-to-video",
+      "name_cn": "Seedance2.0-Fast/文生视频",
+      "name_en": "Seedance2.0 Fast Text to Video",
       "task": "text-to-video",
       "output_type": "video",
       "category": "RunningHub/Seedance",
@@ -11001,7 +11440,10 @@
           "required": true,
           "options": [
             "480p",
-            "720p"
+            "720p",
+            "1080p",
+            "2k",
+            "4k"
           ],
           "default": "720p"
         },
@@ -11051,6 +11493,82 @@
           "type": "BOOLEAN",
           "required": false,
           "default": false
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/wan-2.7/text-to-video",
+      "name_cn": "万相2.7-文生视频",
+      "name_en": "wan-2.7/text-to-video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "日光，暖色调，侧光，特写镜头，居中构图。 一位拥有波浪形栗色长发的年轻女子，身穿浅蓝色吊带连衣裙，裙边饰有精致的蕾丝花边，亭亭玉立于阳光普照的花园中。她的脸部在柔和的虚焦中若隐若现，双眼低垂，神情宁静而专注，嘴唇微启。她身后，一片繁盛的盛开花田——牡丹、雏菊和薰衣草——模糊成绿意与柔和色彩交织的渐变。阳光在她皮肤和连衣裙的面料上投下柔和的高光，营造出自然的容光。 没有对白或人声；环境音包括树叶轻柔的沙沙声、远处鸟儿的鸣叫，以及微风拂过花瓣的声音。",
+          "maxLength": 5000
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 500
+        },
+        {
+          "key": "audioUrl",
+          "type": "AUDIO",
+          "required": false,
+          "maxSizeMB": 15
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+          ],
+          "default": "5"
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "720P",
+            "1080P"
+          ],
+          "default": "720P"
+        },
+        {
+          "key": "aspectRatio",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:3",
+            "3:4"
+          ],
+          "default": "16:9"
         }
       ]
     },
@@ -11269,6 +11787,86 @@
       ]
     },
     {
+      "endpoint": "alibaba/wan-2.7/video-edit",
+      "name_cn": "万相2.7-视频编辑",
+      "name_en": "wan-2.7/video-edit",
+      "task": "video-edit",
+      "output_type": "video",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "default": "把视频中的人物替换成图片中的人物",
+          "maxLength": 5000
+        },
+        {
+          "key": "videoUrl",
+          "type": "VIDEO",
+          "required": false,
+          "maxSizeMB": 100
+        },
+        {
+          "key": "imageUrls",
+          "type": "IMAGE",
+          "required": true,
+          "multiple": true,
+          "maxCount": 3,
+          "maxSizeMB": 20
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "maxLength": 500
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "720P",
+            "1080P"
+          ],
+          "default": "720P"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "0",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "default": "5"
+        },
+        {
+          "key": "aspectRatio",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:3",
+            "3:4"
+          ],
+          "default": "16:9"
+        }
+      ]
+    },
+    {
       "endpoint": "rhart-video-v3.1-fast-official/video-extend",
       "name_cn": "全能视频V3.1-fast-视频扩展-官方稳定版",
       "name_en": "google/veo3.1-fast/video-extend-official-stable",
@@ -11359,6 +11957,76 @@
           "key": "seed",
           "type": "INT",
           "required": false
+        }
+      ]
+    },
+    {
+      "endpoint": "alibaba/wan-2.7/video-extend",
+      "name_cn": "万相2.7-视频续写",
+      "name_en": "wan-2.7/video-extend",
+      "task": "video-extend",
+      "output_type": "video",
+      "category": "RunningHub/Wan",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": false,
+          "default": "探险家走入黑暗的山洞中，打开了手中明亮的手电筒。光束缓慢扫过湿润的岩壁，突然照亮了深处巨大的、散发着幽蓝色光芒的水晶簇。镜头紧随探险家的步伐移动，展现出神秘、令人敬畏的氛围，画面充满电影感和丰富的光影细节。",
+          "maxLength": 5000
+        },
+        {
+          "key": "videoUrl",
+          "type": "VIDEO",
+          "required": true,
+          "maxSizeMB": 100
+        },
+        {
+          "key": "audioUrl",
+          "type": "AUDIO",
+          "required": false,
+          "maxSizeMB": 15
+        },
+        {
+          "key": "negativePrompt",
+          "type": "STRING",
+          "required": false,
+          "default": "模糊，低画质，画面扭曲，卡通动画风格，人物肢体畸形，光线突变不自然，穿模，与前置视频风格不一致。",
+          "maxLength": 500
+        },
+        {
+          "key": "resolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "720P",
+            "1080P"
+          ],
+          "default": "1080P"
+        },
+        {
+          "key": "duration",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+          ],
+          "default": "5"
         }
       ]
     },
@@ -12030,8 +12698,8 @@
     },
     {
       "endpoint": "rhart-video/sparkvideo-2.0/multimodal-video",
-      "name_cn": "超能视频2.0/多模态视频",
-      "name_en": "sparkvideo-2.0/multimodal-video",
+      "name_cn": "Seedance2.0/全能参考视频",
+      "name_en": "Seedance2.0 Multimodal Video",
       "task": "video-other",
       "output_type": "video",
       "category": "RunningHub/Seedance",
@@ -12050,7 +12718,10 @@
           "required": true,
           "options": [
             "480p",
-            "720p"
+            "720p",
+            "1080p",
+            "2k",
+            "4k"
           ],
           "default": "720p"
         },
@@ -12123,8 +12794,8 @@
     },
     {
       "endpoint": "rhart-video/sparkvideo-2.0-fast/multimodal-video",
-      "name_cn": "超能视频2.0-Fast/多模态视频",
-      "name_en": "sparkvideo-2.0-fast/multimodal-video",
+      "name_cn": "Seedance2.0-Fast/全能参考视频",
+      "name_en": "Seedance2.0 Fast Multimodal Video",
       "task": "video-other",
       "output_type": "video",
       "category": "RunningHub/Seedance",
@@ -12146,7 +12817,10 @@
           "required": true,
           "options": [
             "480p",
-            "720p"
+            "720p",
+            "1080p",
+            "2k",
+            "4k"
           ],
           "default": "720p"
         },
@@ -12214,6 +12888,24 @@
             "21:9"
           ],
           "default": "adaptive"
+        }
+      ]
+    },
+    {
+      "endpoint": "rh/video-fps-increaser",
+      "name_cn": "RH视频帧率增强",
+      "name_en": "rh-video-fps-increaser",
+      "task": "video-other",
+      "output_type": "video",
+      "category": "RunningHub/RHArt Video",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "videoUrl",
+          "type": "VIDEO",
+          "required": true,
+          "maxSizeMB": 500
         }
       ]
     },
@@ -12355,6 +13047,36 @@
             "60"
           ],
           "default": "30"
+        }
+      ]
+    },
+    {
+      "endpoint": "rh/video-upscaler",
+      "name_cn": "RH视频超分辨率",
+      "name_en": "rh-video-upscaler",
+      "task": "video-upscale",
+      "output_type": "video",
+      "category": "RunningHub/RHArt Video",
+      "popularity": 99,
+      "tags": [],
+      "params": [
+        {
+          "key": "videoUrl",
+          "type": "VIDEO",
+          "required": true,
+          "maxSizeMB": 500
+        },
+        {
+          "key": "targetResolution",
+          "type": "LIST",
+          "required": true,
+          "options": [
+            "720p",
+            "1080p",
+            "2k",
+            "4k"
+          ],
+          "default": "1080p"
         }
       ]
     },

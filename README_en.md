@@ -2,17 +2,17 @@
 
 [中文](./README.md)
 
-An [OpenClaw](https://github.com/openclaw/openclaw) skill that brings multimedia generation capabilities — including image, video, audio, 3D, and text — to conversational AI, powered by 209 [RunningHub](https://www.runninghub.cn) API endpoints. Built with zero external dependencies (pure Python 3 + curl), it lets users create rich media content through natural language, with support for both standard model APIs and custom ComfyUI workflows (AI Applications).
+An [OpenClaw](https://github.com/openclaw/openclaw) skill that brings multimedia generation capabilities — including image, video, audio, 3D, and text — to conversational AI, powered by 222 [RunningHub](https://www.runninghub.cn) API endpoints. Built with zero external dependencies (pure Python 3 + curl), it lets users create rich media content through natural language, with support for both standard model APIs and custom ComfyUI workflows (AI Applications).
 
 ## Capabilities
 
 | Category | Endpoints | Tasks |
 |----------|-----------|-------|
-| **Image** | 47 | text-to-image, image-to-image, image upscale, Midjourney-style |
-| **Video** | 126 | text-to-video, image-to-video, start-end frames, video extend/edit, motion control, multimodal video |
+| **Image** | 51 | text-to-image, image-to-image, image upscale, Midjourney-style |
+| **Video** | 134 | text-to-video, image-to-video, start-end frames, video extend/edit, motion control, multimodal video |
 | **Audio** | 8 | text-to-speech, music generation, voice clone |
 | **3D** | 12 | text-to-3D, image-to-3D, multi-image-to-3D |
-| **Text** | 16 | image-to-text, video-to-text, text-to-text |
+| **Text** | 17 | image-to-text, video-to-text, text-to-text |
 | **AI Apps** | Unlimited | Run any RunningHub AI Application (custom ComfyUI workflow) |
 
 ## Quick Start
@@ -64,7 +64,7 @@ When generating video, the assistant presents 8 curated models to choose from:
 > 5. ✨ **Vidu Q3 Pro** — Unique stylized look
 > 6. ⭐ **Sora** — Sora-class engine
 > 7. 🌊 **MiniMax Hailuo** — Fast with fine details
-> 8. 🌱 **超能视频SD2.0** — Top quality, up to 15s + auto audio, not for real people
+> 8. 🌱 **Seedance 2.0** — Top quality, up to 15s + auto audio + real people, up to 4K
 
 Pick a number to start, or the default (Google Veo 3.1 Fast) is used automatically.
 
@@ -86,7 +86,7 @@ Pick a number to start, or the default (RH Image PRO) is used automatically.
 runninghub/
 ├── SKILL.md                        # OpenClaw skill definition (routing table + examples)
 ├── scripts/
-│   ├── runninghub.py               # Standard model API client (209 endpoints)
+│   ├── runninghub.py               # Standard model API client (222 endpoints)
 │   ├── runninghub_app.py           # AI Application client (custom ComfyUI workflows)
 │   └── build_capabilities.py       # Generates capabilities.json from models_registry.json
 └── data/

@@ -1,6 +1,6 @@
 ---
 name: runninghub
-description: "Generate images, videos, audio, and 3D models via RunningHub API (209 endpoints) and run any RunningHub AI Application (custom ComfyUI workflow) by webappId. Covers text-to-image, image-to-video, text-to-speech, music generation, 3D modeling, image upscaling, AI apps, and more."
+description: "Generate images, videos, audio, and 3D models via RunningHub API (222 endpoints) and run any RunningHub AI Application (custom ComfyUI workflow) by webappId. Covers text-to-image, image-to-video, text-to-speech, music generation, 3D modeling, image upscaling, AI apps, and more."
 homepage: https://www.runninghub.cn
 metadata:
   {
@@ -63,7 +63,7 @@ Quick check: `python3 {baseDir}/scripts/runninghub.py --check`
 | Video upscale | `topazlabs/video-upscale` | |
 | Motion control | `kling-v3.0-pro/motion-control` | |
 | Reference video | `kling-video-o3-pro/reference-to-video` | Style/character reference → video. Alt: vidu, wan-2.6, seedance |
-| Multimodal video | `rhart-video/sparkvideo-2.0/multimodal-video` | Mix image+video+audio inputs → new video (超能视频SD2.0). No real people. |
+| Multimodal video | `rhart-video/sparkvideo-2.0/multimodal-video` | Mix image+video+audio inputs → new video (Seedance 2.0). Supports real people. |
 | TTS (best) | `rhart-audio/text-to-audio/speech-2.8-hd` | HD quality |
 | TTS (fast) | `rhart-audio/text-to-audio/speech-2.8-turbo` | |
 | Music | `rhart-audio/text-to-audio/music-2.5` | |
