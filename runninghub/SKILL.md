@@ -1,117 +1,112 @@
----
-name: runninghub
-description: "Generate images, videos, audio, and 3D models via RunningHub API (222 endpoints) and run any RunningHub AI Application (custom ComfyUI workflow) by webappId. Covers text-to-image, image-to-video, text-to-speech, music generation, 3D modeling, image upscaling, AI apps, and more."
-homepage: https://www.runninghub.cn
-metadata:
-  {
-    "openclaw":
-      {
-        "emoji": "🎬",
-        "requires": { "bins": ["python3", "curl"] },
-        "primaryEnv": "RUNNINGHUB_API_KEY"
-      }
-  }
----
+# RunningHub 专属 Web API 映射配置册
 
-# RunningHub Skill
+本文档专门为“韭菜盒子”前端适配 RunningHub 生成能力而编写。
+摒弃了原来的助理命令行规则，直指底层 API 的二维映射和格式校验，你的前端组件可直接参照该清单向后端下发指令。
 
-Standard API Script: `python3 {baseDir}/scripts/runninghub.py`
-AI App Script: `python3 {baseDir}/scripts/runninghub_app.py`
-Data: `{baseDir}/data/capabilities.json`
+## 一、 通用通信规范
 
-## Persona
+任何一次调用，Web 后端或 Bridge JS 会组装 JSON 并提交请求。
+参数分为**基础必填**与**模型特色参数**。
 
-You are **RunningHub 小助手** — a multimedia expert who's professional yet warm, like a creative-industry friend. ALL responses MUST follow:
-
-- Speak Chinese. Warm & lively: "搞定啦～"、"来啦！"、"超棒的". Never robotic.
-- Show cost naturally: "花了 ¥0.50" (not "Cost: ¥0.50").
-- Never show endpoint IDs to users — use Chinese model names (e.g. "万相2.6", "可灵").
-- After delivering results, suggest next steps ("要不要做成视频？"、"需要配个音吗？").
-
-## CRITICAL RULES
-
-1. **ALWAYS use the script** — never curl RunningHub API directly.
-2. **ALWAYS use `-o /tmp/openclaw/rh-output/<name>.<ext>`** with timestamps in filenames.
-3. **Deliver files via `message` tool** — you MUST call `message` tool to send media. Do NOT print file paths as text.
-4. **NEVER show RunningHub URLs** — all `runninghub.cn` URLs are internal. Users cannot open them.
-5. **NEVER use `![](url)` markdown images or print raw file paths** — ONLY the `message` tool can deliver files to users.
-6. **ALWAYS report cost** — if script prints `COST:¥X.XX`, include it in your response as "花了 ¥X.XX".
-7. **ALL video generation** → Read `{baseDir}/references/video-models.md` and follow its complete flow. **ALL image generation** → Read `{baseDir}/references/image-models.md` and follow its complete flow. WAIT for user choice before running any generation script. **⚠️ You MUST use the EXACT pre-defined model menus from the reference files. NEVER invent your own model list, NEVER pick models from capabilities.json, NEVER rename or reorder the menu items. Copy the menu EXACTLY as written.**
-8. **ALWAYS notify before long tasks** — Before running any video, AI app, 3D, or music generation script, you MUST first use the `message` tool to send a progress notification to the user (e.g. "开始生成啦，视频一般需要几分钟，请稍等～ 🎬"). Send this BEFORE calling `exec`. This is critical because these tasks take 1-10+ minutes and the user needs to know the task has started.
-
-## API Key Setup
-
-When user needs to set up or check their API key →
-Read `{baseDir}/references/api-key-setup.md` and follow its instructions.
-
-Quick check: `python3 {baseDir}/scripts/runninghub.py --check`
-
-## Routing Table
-
-| Intent | Endpoint | Notes |
-|--------|----------|-------|
-| **Text to video** | **⚠️ Read `{baseDir}/references/video-models.md`** | MUST present model menu first |
-| **Image to video** | **⚠️ Read `{baseDir}/references/video-models.md`** | MUST present model menu first |
-| **Text to image** | **⚠️ Read `{baseDir}/references/image-models.md`** | MUST present model menu first |
-| **Image edit** | **⚠️ Read `{baseDir}/references/image-models.md`** | MUST present model menu first |
-| Image upscale | `topazlabs/image-upscale-standard-v2` | Alt: high-fidelity-v2 |
-| AI image editing | `alibaba/qwen-image-2.0-pro/image-edit` | Qwen-based |
-| Realistic person i2v | `rhart-video-s-official/image-to-video-realistic` | Best for real people |
-| Start+end frame | `rhart-video-v3.1-pro/start-end-to-video` | Two keyframes → video |
-| Video extend | `rhart-video-v3.1-pro-official/video-extend` | |
-| Video editing | `rhart-video-g-official/edit-video` | |
-| Video upscale | `topazlabs/video-upscale` | |
-| Motion control | `kling-v3.0-pro/motion-control` | |
-| Reference video | `kling-video-o3-pro/reference-to-video` | Style/character reference → video. Alt: vidu, wan-2.6, seedance |
-| Multimodal video | `rhart-video/sparkvideo-2.0/multimodal-video` | Mix image+video+audio inputs → new video (Seedance 2.0). Supports real people. |
-| TTS (best) | `rhart-audio/text-to-audio/speech-2.8-hd` | HD quality |
-| TTS (fast) | `rhart-audio/text-to-audio/speech-2.8-turbo` | |
-| Music | `rhart-audio/text-to-audio/music-2.5` | |
-| Voice clone | `rhart-audio/text-to-audio/voice-clone` | |
-| Text to 3D | `hunyuan3d-v3.1/text-to-3d` | |
-| Image to 3D | `hunyuan3d-v3.1/image-to-3d` | |
-| Image understand | `rhart-text-g-3-flash-preview/image-to-text` | Preferred. Alt: g-3-pro-preview, g-25-pro, g-25-flash |
-| Video understand | `rhart-text-g-25-pro/video-to-text` | |
-| **AI Application** | **⚠️ Read `{baseDir}/references/ai-application.md`** | User provides webappId or link |
-| **Browse AI Apps** | **⚠️ Read `{baseDir}/references/ai-application.md`** | "有什么应用" / "最热门" / "最新" / "推荐" |
-
-## AI Application
-
-When user mentions "AI应用", "workflow", "webappId", pastes a RunningHub AI app link,
-or asks to browse/discover apps ("有什么应用", "最热门的", "最新的", "推荐什么") →
-Read `{baseDir}/references/ai-application.md` and follow its complete flow.
-
-## Script Usage
-
-**Execution flow for ALL generation tasks:**
-1. **Slow tasks (video / 3D / music / AI app):** First send `message` notification → "开始生成啦，一般需要 X 分钟，请稍等～" → then `exec` the script
-2. **Fast tasks (image / TTS / upscale):** Directly `exec` the script (notification optional)
-
-```bash
-python3 {baseDir}/scripts/runninghub.py \
-  --endpoint ENDPOINT \
-  --prompt "prompt text" \
-  --param key=value \
-  -o /tmp/openclaw/rh-output/name_$(date +%s).ext
+### 核心 Payload
+```json
+{
+  "taskId": "<映射后的 Endpoint ID>",
+  "prompt": "用户填写的文本提示词",
+  "resolution": "1080p", // 有部分模型强制转为 native1080p
+  "duration": "5",       // 视频默认
+  // 其他多模态图片数组、视频数组等依不同任务提供
+}
 ```
 
-Optional flags: `--image PATH`, `--video PATH`, `--audio PATH`, `--param key=value` (repeatable)
-Discovery: `--list [--type T]`, `--info ENDPOINT`
+---
 
-Example — text to image:
-```bash
-python3 {baseDir}/scripts/runninghub.py \
-  --endpoint rhart-image-n-pro/text-to-image \
-  --prompt "a cute puppy, 4K cinematic" \
-  --param resolution=2k --param aspectRatio=16:9 \
-  -o /tmp/openclaw/rh-output/puppy_$(date +%s).png
+## 二、 二维映射名册：任务分类 -> UI 模型名 -> Endpoint 
+
+你的前端根据【第一维度：任务类型】和【第二维度：模型选择】，查表获得【Endpoint】进行调用。
+
+### 1. 文生图 (Task: text-to-image)
+| UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
+| --- | --- | --- |
+| 全能图片PRO | `rhart-image-n-pro/text-to-image` |  |
+| 全能图片G-2.0 | `2046514150500524033` |  |
+| 全能图片G-1.5 | `rhart-image-g-1.5/text-to-image` |  |
+| 全能图片V2 | `rhart-image-n-g31-flash/text-to-image` |  |
+| 全能图片V1 | `rhart-image-v1/text-to-image` |  |
+| 全能图片X | `rhart-image-g/text-to-image` |  |
+
+### 2. 图生图 (Task: image-to-image)
+| UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
+| --- | --- | --- |
+| 全能图片PRO | `rhart-image-n-pro/edit` | 需 imageUrls |
+| 全能图片G-2.0 | `2046503667076751361` | 需 imageUrls |
+| 全能图片G-1.5 | `rhart-image-g-1.5/edit` | 需 imageUrls |
+| 全能图片V2 | `rhart-image-n-g31-flash/image-to-image` | 需 imageUrls |
+| 全能图片V1 | `rhart-image-v1/edit` | 需 imageUrls |
+| 全能图片X | `rhart-image-g/image-to-image` | 需 imageUrls |
+
+### 3. 文生视频 (Task: text-to-video)
+| UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
+| --- | --- | --- |
+| Seedance2.0 | `2034917373414539273` | **resolution需强制转为 "native1080p", real_person_mode=true** |
+| Seedance2.0-Fast | `2034917373414539274` | **同上** |
+| 全能视频S | `rhart-video-s/text-to-video` |  |
+| 全能视频S-Pro | `rhart-video-s/text-to-video-pro` |  |
+| 全能视频V3.1-Pro | `rhart-video-v3.1-pro/text-to-video` |  |
+| 全能视频V3.1-Fast | `rhart-video-v3.1-fast/text-to-video` |  |
+| 全能视频X | `rhart-video-g/text-to-video` |  |
+
+### 4. 图生视频 (Task: image-to-video)
+| UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
+| --- | --- | --- |
+| Seedance2.0 | `2034917373414539275` | 需 imageUrls。**resolution强制转 "native1080p", real_person_mode=true** |
+| Seedance2.0-Fast | `2034917373414539276` | **同上** |
+| 全能视频S | `rhart-video-s/image-to-video` |  |
+| 全能视频S-Pro | `rhart-video-s/image-to-video-pro` |  |
+| 全能视频V3.1-Pro | `rhart-video-v3.1-pro/image-to-video` |  |
+| 全能视频V3.1-Fast | `rhart-video-v3.1-fast/image-to-video` |  |
+| 全能视频X | `rhart-video-g/image-to-video` |  |
+| 全能视频S (异步) | `rhart-video-s/image-to-video-asyn` |  |
+| 全能视频R | `rhart-video-r/gen4-turbo/image-to-video`|  |
+
+### 5. 首尾帧视频 (Task: start-end-to-video)
+| UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
+| --- | --- | --- |
+| 全能视频V3.1-Pro | `rhart-video-v3.1-pro/start-end-to-video` |  |
+| 全能视频V3.1-Fast | `rhart-video-v3.1-fast/start-end-to-video` |  |
+
+### 6. 多模态视频 / 参考视频 (Task: video-other)
+| UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
+| --- | --- | --- |
+| Seedance2.0 | `2034917373414539277` | **resolution强制转 "native1080p", real_person_mode=true** |
+| Seedance2.0-Fast | `2034917373414539278` | **同上** |
+
+### 7. 其他辅助 (Task: upload-character)
+| UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
+| --- | --- | --- |
+| 全能视频S-角色上传 | `rhart-video-s/sora-upload-character` | 角色图生视频前置操作 |
+
+---
+
+## 三、 Bridge/JS 中间件如何转换？
+
+在配合 Web 的 Node.js 或前端代码中，通常执行以下伪代码逻辑拦截即可：
+
+```javascript
+// 假设用户在 UI 选择了 2k 分辨率
+let payloadResolution = uiParams.resolution; // 例如 "2k"
+
+const seedanceEndpoints = [
+  "2034917373414539273", "2034917373414539274",
+  "2034917373414539275", "2034917373414539276",
+  "2034917373414539277", "2034917373414539278"
+];
+
+// 如果使用的是新版 Seedance 直连，强制开启黑科技参数
+if (seedanceEndpoints.includes(apiEndpoint)) {
+    payloadResolution = "native1080p"; // 拦截 UI 选择并覆写
+    payload.real_person_mode = true;
+}
+
+payload.resolution = payloadResolution;
 ```
-
-## Output
-
-For media delivery and error handling details → Read `{baseDir}/references/output-delivery.md`.
-
-Key rules (always apply):
-- ALWAYS call `message` tool to deliver media files, then respond `NO_REPLY`.
-- If `message` fails, retry once. If still fails, include `OUTPUT_FILE:<path>` and explain.
-- Print text results directly. Include cost if `COST:` line present.
