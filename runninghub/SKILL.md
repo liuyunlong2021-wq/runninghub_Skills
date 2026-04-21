@@ -29,7 +29,7 @@
 | UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
 | --- | --- | --- |
 | 全能图片PRO | `rhart-image-n-pro/text-to-image` |  |
-| 全能图片G-2.0 | `2046514150500524033` |  |
+| GPT2.0 | `2046514150500524033` |  |
 | 全能图片G-1.5 | `rhart-image-g-1.5/text-to-image` |  |
 | 全能图片V2 | `rhart-image-n-g31-flash/text-to-image` |  |
 | 全能图片V1 | `rhart-image-v1/text-to-image` |  |
@@ -39,7 +39,7 @@
 | UI 模型名推荐 | 实际 Endpoint | 特殊参数要求 |
 | --- | --- | --- |
 | 全能图片PRO | `rhart-image-n-pro/edit` | 需 imageUrls |
-| 全能图片G-2.0 | `2046503667076751361` | 需 imageUrls |
+| GPT2.0 | `2046503667076751361` | 需 imageUrls |
 | 全能图片G-1.5 | `rhart-image-g-1.5/edit` | 需 imageUrls |
 | 全能图片V2 | `rhart-image-n-g31-flash/image-to-image` | 需 imageUrls |
 | 全能图片V1 | `rhart-image-v1/edit` | 需 imageUrls |

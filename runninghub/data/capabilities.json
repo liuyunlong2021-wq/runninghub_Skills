@@ -1780,7 +1780,7 @@
         },
         {
             "endpoint": "2046514150500524033",
-            "name_cn": "全能图片G-2.0-文生图-低价渠道版",
+            "name_cn": "GPT2.0-文生图-低价渠道版",
             "name_en": "Image G 2.0 Text to Image",
             "task": "text-to-image",
             "output_type": "image",
@@ -1811,7 +1811,7 @@
         },
         {
             "endpoint": "2046503667076751361",
-            "name_cn": "全能图片G-2.0-图生图-低价渠道版",
+            "name_cn": "GPT2.0-图生图-低价渠道版",
             "name_en": "Image G 2.0 Image to Image",
             "task": "image-to-image",
             "output_type": "image",
