@@ -609,7 +609,7 @@
             ]
         },
         {
-            "endpoint": "rhart-video/sparkvideo-2.0/image-to-video",
+            "endpoint": "2034917373414539275",
             "name_cn": "Seedance2.0/图生视频",
             "name_en": "Seedance2.0 Image to Video",
             "task": "image-to-video",
@@ -633,9 +633,10 @@
                         "720p",
                         "1080p",
                         "2k",
-                        "4k"
+                        "4k",
+                        "native1080p"
                     ],
-                    "default": "720p"
+                    "default": "native1080p"
                 },
                 {
                     "key": "duration",
@@ -689,11 +690,17 @@
                         "21:9"
                     ],
                     "default": "adaptive"
+                },
+                {
+                    "key": "real_person_mode",
+                    "type": "BOOLEAN",
+                    "required": false,
+                    "default": true
                 }
             ]
         },
         {
-            "endpoint": "rhart-video/sparkvideo-2.0-fast/image-to-video",
+            "endpoint": "2034917373414539276",
             "name_cn": "Seedance2.0-Fast/图生视频",
             "name_en": "Seedance2.0 Fast Image to Video",
             "task": "image-to-video",
@@ -719,9 +726,10 @@
                         "720p",
                         "1080p",
                         "2k",
-                        "4k"
+                        "4k",
+                        "native1080p"
                     ],
-                    "default": "720p"
+                    "default": "native1080p"
                 },
                 {
                     "key": "duration",
@@ -775,6 +783,12 @@
                         "21:9"
                     ],
                     "default": "adaptive"
+                },
+                {
+                    "key": "real_person_mode",
+                    "type": "BOOLEAN",
+                    "required": false,
+                    "default": true
                 }
             ]
         },
@@ -1364,7 +1378,7 @@
             ]
         },
         {
-            "endpoint": "rhart-video/sparkvideo-2.0/text-to-video",
+            "endpoint": "2034917373414539273",
             "name_cn": "Seedance2.0/文生视频",
             "name_en": "Seedance2.0 Text to Video",
             "task": "text-to-video",
@@ -1389,9 +1403,10 @@
                         "720p",
                         "1080p",
                         "2k",
-                        "4k"
+                        "4k",
+                        "native1080p"
                     ],
-                    "default": "720p"
+                    "default": "native1080p"
                 },
                 {
                     "key": "duration",
@@ -1439,11 +1454,17 @@
                     "type": "BOOLEAN",
                     "required": false,
                     "default": false
+                },
+                {
+                    "key": "real_person_mode",
+                    "type": "BOOLEAN",
+                    "required": false,
+                    "default": true
                 }
             ]
         },
         {
-            "endpoint": "rhart-video/sparkvideo-2.0-fast/text-to-video",
+            "endpoint": "2034917373414539274",
             "name_cn": "Seedance2.0-Fast/文生视频",
             "name_en": "Seedance2.0 Fast Text to Video",
             "task": "text-to-video",
@@ -1470,9 +1491,10 @@
                         "720p",
                         "1080p",
                         "2k",
-                        "4k"
+                        "4k",
+                        "native1080p"
                     ],
-                    "default": "720p"
+                    "default": "native1080p"
                 },
                 {
                     "key": "duration",
@@ -1520,6 +1542,12 @@
                     "type": "BOOLEAN",
                     "required": false,
                     "default": false
+                },
+                {
+                    "key": "real_person_mode",
+                    "type": "BOOLEAN",
+                    "required": false,
+                    "default": true
                 }
             ]
         },
@@ -1542,7 +1570,7 @@
             ]
         },
         {
-            "endpoint": "rhart-video/sparkvideo-2.0/multimodal-video",
+            "endpoint": "2034917373414539277",
             "name_cn": "Seedance2.0/全能参考视频",
             "name_en": "Seedance2.0 Multimodal Video",
             "task": "video-other",
@@ -1566,9 +1594,10 @@
                         "720p",
                         "1080p",
                         "2k",
-                        "4k"
+                        "4k",
+                        "native1080p"
                     ],
-                    "default": "720p"
+                    "default": "native1080p"
                 },
                 {
                     "key": "duration",
@@ -1634,11 +1663,17 @@
                         "21:9"
                     ],
                     "default": "adaptive"
+                },
+                {
+                    "key": "real_person_mode",
+                    "type": "BOOLEAN",
+                    "required": false,
+                    "default": true
                 }
             ]
         },
         {
-            "endpoint": "rhart-video/sparkvideo-2.0-fast/multimodal-video",
+            "endpoint": "2034917373414539278",
             "name_cn": "Seedance2.0-Fast/全能参考视频",
             "name_en": "Seedance2.0 Fast Multimodal Video",
             "task": "video-other",
@@ -1665,9 +1700,10 @@
                         "720p",
                         "1080p",
                         "2k",
-                        "4k"
+                        "4k",
+                        "native1080p"
                     ],
-                    "default": "720p"
+                    "default": "native1080p"
                 },
                 {
                     "key": "duration",
@@ -1733,6 +1769,12 @@
                         "21:9"
                     ],
                     "default": "adaptive"
+                },
+                {
+                    "key": "real_person_mode",
+                    "type": "BOOLEAN",
+                    "required": false,
+                    "default": true
                 }
             ]
         }
